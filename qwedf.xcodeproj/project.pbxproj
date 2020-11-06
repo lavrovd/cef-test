@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E4856B9325552D6800E02BBF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4856B9225552D6800E02BBF /* AppDelegate.m */; };
+		E4856B9625552D6800E02BBF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4856B9525552D6800E02BBF /* ViewController.m */; };
+		E4856B9825552D6800E02BBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4856B9725552D6800E02BBF /* Assets.xcassets */; };
+		E4856B9B25552D6800E02BBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4856B9925552D6800E02BBF /* Main.storyboard */; };
+		E4856B9E25552D6800E02BBF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4856B9D25552D6800E02BBF /* main.m */; };
+		E4856BA925552D6900E02BBF /* qwedfTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4856BA825552D6900E02BBF /* qwedfTests.m */; };
+		E4856BB425552D6900E02BBF /* qwedfUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4856BB325552D6900E02BBF /* qwedfUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4856BA525552D6900E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856B8625552D6800E02BBF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4856B8D25552D6800E02BBF;
+			remoteInfo = qwedf;
+		};
+		E4856BB025552D6900E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856B8625552D6800E02BBF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4856B8D25552D6800E02BBF;
+			remoteInfo = qwedf;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E4856B8E25552D6800E02BBF /* qwedf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qwedf.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4856B9125552D6800E02BBF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E4856B9225552D6800E02BBF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E4856B9425552D6800E02BBF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E4856B9525552D6800E02BBF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E4856B9725552D6800E02BBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4856B9A25552D6800E02BBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4856B9C25552D6800E02BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4856B9D25552D6800E02BBF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E4856B9F25552D6800E02BBF /* qwedf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = qwedf.entitlements; sourceTree = "<group>"; };
+		E4856BA425552D6900E02BBF /* qwedfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = qwedfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4856BA825552D6900E02BBF /* qwedfTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = qwedfTests.m; sourceTree = "<group>"; };
+		E4856BAA25552D6900E02BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4856BAF25552D6900E02BBF /* qwedfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = qwedfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4856BB325552D6900E02BBF /* qwedfUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = qwedfUITests.m; sourceTree = "<group>"; };
+		E4856BB525552D6900E02BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4856B8B25552D6800E02BBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4856BA125552D6900E02BBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4856BAC25552D6900E02BBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E4856B8525552D6800E02BBF = {
+			isa = PBXGroup;
+			children = (
+				E4856B9025552D6800E02BBF /* qwedf */,
+				E4856BA725552D6900E02BBF /* qwedfTests */,
+				E4856BB225552D6900E02BBF /* qwedfUITests */,
+				E4856B8F25552D6800E02BBF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E4856B8F25552D6800E02BBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4856B8E25552D6800E02BBF /* qwedf.app */,
+				E4856BA425552D6900E02BBF /* qwedfTests.xctest */,
+				E4856BAF25552D6900E02BBF /* qwedfUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4856B9025552D6800E02BBF /* qwedf */ = {
+			isa = PBXGroup;
+			children = (
+				E4856B9125552D6800E02BBF /* AppDelegate.h */,
+				E4856B9225552D6800E02BBF /* AppDelegate.m */,
+				E4856B9425552D6800E02BBF /* ViewController.h */,
+				E4856B9525552D6800E02BBF /* ViewController.m */,
+				E4856B9725552D6800E02BBF /* Assets.xcassets */,
+				E4856B9925552D6800E02BBF /* Main.storyboard */,
+				E4856B9C25552D6800E02BBF /* Info.plist */,
+				E4856B9D25552D6800E02BBF /* main.m */,
+				E4856B9F25552D6800E02BBF /* qwedf.entitlements */,
+			);
+			path = qwedf;
+			sourceTree = "<group>";
+		};
+		E4856BA725552D6900E02BBF /* qwedfTests */ = {
+			isa = PBXGroup;
+			children = (
+				E4856BA825552D6900E02BBF /* qwedfTests.m */,
+				E4856BAA25552D6900E02BBF /* Info.plist */,
+			);
+			path = qwedfTests;
+			sourceTree = "<group>";
+		};
+		E4856BB225552D6900E02BBF /* qwedfUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E4856BB325552D6900E02BBF /* qwedfUITests.m */,
+				E4856BB525552D6900E02BBF /* Info.plist */,
+			);
+			path = qwedfUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4856B8D25552D6800E02BBF /* qwedf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4856BB825552D6900E02BBF /* Build configuration list for PBXNativeTarget "qwedf" */;
+			buildPhases = (
+				E4856B8A25552D6800E02BBF /* Sources */,
+				E4856B8B25552D6800E02BBF /* Frameworks */,
+				E4856B8C25552D6800E02BBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = qwedf;
+			productName = qwedf;
+			productReference = E4856B8E25552D6800E02BBF /* qwedf.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E4856BA325552D6900E02BBF /* qwedfTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4856BBB25552D6900E02BBF /* Build configuration list for PBXNativeTarget "qwedfTests" */;
+			buildPhases = (
+				E4856BA025552D6900E02BBF /* Sources */,
+				E4856BA125552D6900E02BBF /* Frameworks */,
+				E4856BA225552D6900E02BBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4856BA625552D6900E02BBF /* PBXTargetDependency */,
+			);
+			name = qwedfTests;
+			productName = qwedfTests;
+			productReference = E4856BA425552D6900E02BBF /* qwedfTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E4856BAE25552D6900E02BBF /* qwedfUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4856BBE25552D6900E02BBF /* Build configuration list for PBXNativeTarget "qwedfUITests" */;
+			buildPhases = (
+				E4856BAB25552D6900E02BBF /* Sources */,
+				E4856BAC25552D6900E02BBF /* Frameworks */,
+				E4856BAD25552D6900E02BBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4856BB125552D6900E02BBF /* PBXTargetDependency */,
+			);
+			name = qwedfUITests;
+			productName = qwedfUITests;
+			productReference = E4856BAF25552D6900E02BBF /* qwedfUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4856B8625552D6800E02BBF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					E4856B8D25552D6800E02BBF = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					E4856BA325552D6900E02BBF = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = E4856B8D25552D6800E02BBF;
+					};
+					E4856BAE25552D6900E02BBF = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = E4856B8D25552D6800E02BBF;
+					};
+				};
+			};
+			buildConfigurationList = E4856B8925552D6800E02BBF /* Build configuration list for PBXProject "qwedf" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E4856B8525552D6800E02BBF;
+			productRefGroup = E4856B8F25552D6800E02BBF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4856B8D25552D6800E02BBF /* qwedf */,
+				E4856BA325552D6900E02BBF /* qwedfTests */,
+				E4856BAE25552D6900E02BBF /* qwedfUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4856B8C25552D6800E02BBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4856B9825552D6800E02BBF /* Assets.xcassets in Resources */,
+				E4856B9B25552D6800E02BBF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4856BA225552D6900E02BBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4856BAD25552D6900E02BBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4856B8A25552D6800E02BBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4856B9625552D6800E02BBF /* ViewController.m in Sources */,
+				E4856B9E25552D6800E02BBF /* main.m in Sources */,
+				E4856B9325552D6800E02BBF /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4856BA025552D6900E02BBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4856BA925552D6900E02BBF /* qwedfTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4856BAB25552D6900E02BBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4856BB425552D6900E02BBF /* qwedfUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4856BA625552D6900E02BBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4856B8D25552D6800E02BBF /* qwedf */;
+			targetProxy = E4856BA525552D6900E02BBF /* PBXContainerItemProxy */;
+		};
+		E4856BB125552D6900E02BBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4856B8D25552D6800E02BBF /* qwedf */;
+			targetProxy = E4856BB025552D6900E02BBF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E4856B9925552D6800E02BBF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4856B9A25552D6800E02BBF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4856BB625552D6900E02BBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E4856BB725552D6900E02BBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E4856BB925552D6900E02BBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = qwedf/qwedf.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8ASDZSTA53;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = qwedf/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E4856BBA25552D6900E02BBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = qwedf/qwedf.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8ASDZSTA53;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = qwedf/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E4856BBC25552D6900E02BBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8ASDZSTA53;
+				INFOPLIST_FILE = qwedfTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedfTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/qwedf.app/Contents/MacOS/qwedf";
+			};
+			name = Debug;
+		};
+		E4856BBD25552D6900E02BBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8ASDZSTA53;
+				INFOPLIST_FILE = qwedfTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedfTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/qwedf.app/Contents/MacOS/qwedf";
+			};
+			name = Release;
+		};
+		E4856BBF25552D6900E02BBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8ASDZSTA53;
+				INFOPLIST_FILE = qwedfUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedfUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = qwedf;
+			};
+			name = Debug;
+		};
+		E4856BC025552D6900E02BBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8ASDZSTA53;
+				INFOPLIST_FILE = qwedfUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedfUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = qwedf;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4856B8925552D6800E02BBF /* Build configuration list for PBXProject "qwedf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4856BB625552D6900E02BBF /* Debug */,
+				E4856BB725552D6900E02BBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4856BB825552D6900E02BBF /* Build configuration list for PBXNativeTarget "qwedf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4856BB925552D6900E02BBF /* Debug */,
+				E4856BBA25552D6900E02BBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4856BBB25552D6900E02BBF /* Build configuration list for PBXNativeTarget "qwedfTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4856BBC25552D6900E02BBF /* Debug */,
+				E4856BBD25552D6900E02BBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4856BBE25552D6900E02BBF /* Build configuration list for PBXNativeTarget "qwedfUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4856BBF25552D6900E02BBF /* Debug */,
+				E4856BC025552D6900E02BBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4856B8625552D6800E02BBF /* Project object */;
+}
