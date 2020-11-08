@@ -11,27 +11,145 @@
 		E4856B9625552D6800E02BBF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4856B9525552D6800E02BBF /* ViewController.m */; };
 		E4856B9825552D6800E02BBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4856B9725552D6800E02BBF /* Assets.xcassets */; };
 		E4856B9B25552D6800E02BBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4856B9925552D6800E02BBF /* Main.storyboard */; };
-		E4856B9E25552D6800E02BBF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4856B9D25552D6800E02BBF /* main.m */; };
-		E4856BA925552D6900E02BBF /* qwedfTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4856BA825552D6900E02BBF /* qwedfTests.m */; };
-		E4856BB425552D6900E02BBF /* qwedfUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4856BB325552D6900E02BBF /* qwedfUITests.m */; };
+		E4856B9E25552D6800E02BBF /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4856B9D25552D6800E02BBF /* main.mm */; };
+		E4856C1F2557010100E02BBF /* Chromium Embedded Framework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E4856C1E2557010100E02BBF /* Chromium Embedded Framework.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4856EA92557047500E02BBF /* libcef_dll_wrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4856EA82557047500E02BBF /* libcef_dll_wrapper.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E4856BA525552D6900E02BBF /* PBXContainerItemProxy */ = {
+		E4856EC0255704F300E02BBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4856B8625552D6800E02BBF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E4856B8D25552D6800E02BBF;
-			remoteInfo = qwedf;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 225DEA272B7142A09100DE2B;
+			remoteInfo = cef_gtest;
 		};
-		E4856BB025552D6900E02BBF /* PBXContainerItemProxy */ = {
+		E4856EC2255704F300E02BBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4856B8625552D6800E02BBF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E4856B8D25552D6800E02BBF;
-			remoteInfo = qwedf;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BBF695F183054108B463215C;
+			remoteInfo = cefclient;
+		};
+		E4856EC4255704F300E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0A7F236871584ACF85B48F51;
+			remoteInfo = cefclient_Helper;
+		};
+		E4856EC6255704F300E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 90A60B4D48274A0E8F08B8E5;
+			remoteInfo = cefclient_Helper_gpu;
+		};
+		E4856EC8255704F300E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E6AB3557853046C1A146B409;
+			remoteInfo = cefclient_Helper_plugin;
+		};
+		E4856ECA255704F300E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 32723176804249808A84DBE2;
+			remoteInfo = cefclient_Helper_renderer;
+		};
+		E4856ECC255704F300E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F9E2F2A38BB14E14A0C0D4ED;
+			remoteInfo = cefsimple;
+		};
+		E4856ECE255704F300E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04267608E9FF402CB697C545;
+			remoteInfo = cefsimple_Helper;
+		};
+		E4856ED0255704F300E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 77A5C6863DA64B16B63FD330;
+			remoteInfo = cefsimple_Helper_gpu;
+		};
+		E4856ED2255704F300E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 380FBF62DA014A14AA070E17;
+			remoteInfo = cefsimple_Helper_plugin;
+		};
+		E4856ED4255704F300E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D897838ACA134E2592F24073;
+			remoteInfo = cefsimple_Helper_renderer;
+		};
+		E4856ED6255704F300E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E90DB3A9C3D344128CCD0D4D;
+			remoteInfo = ceftests;
+		};
+		E4856ED8255704F300E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B157C6F95F4DE78DBBA64F;
+			remoteInfo = ceftests_Helper;
+		};
+		E4856EDA255704F300E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 002327A410C64FC98D1F2D58;
+			remoteInfo = ceftests_Helper_gpu;
+		};
+		E4856EDC255704F300E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 772777EB91EE44709004F66F;
+			remoteInfo = ceftests_Helper_plugin;
+		};
+		E4856EDE255704F300E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BAD10C4C2CF545D3B2AB7D65;
+			remoteInfo = ceftests_Helper_renderer;
+		};
+		E4856EE0255704F300E02BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF4CD782B1BE456CB573C321;
+			remoteInfo = libcef_dll_wrapper;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E4856C172556FAED00E02BBF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E4856C1F2557010100E02BBF /* Chromium Embedded Framework.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E4856B8E25552D6800E02BBF /* qwedf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qwedf.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,14 +160,11 @@
 		E4856B9725552D6800E02BBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4856B9A25552D6800E02BBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4856B9C25552D6800E02BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4856B9D25552D6800E02BBF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E4856B9D25552D6800E02BBF /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		E4856B9F25552D6800E02BBF /* qwedf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = qwedf.entitlements; sourceTree = "<group>"; };
-		E4856BA425552D6900E02BBF /* qwedfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = qwedfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4856BA825552D6900E02BBF /* qwedfTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = qwedfTests.m; sourceTree = "<group>"; };
-		E4856BAA25552D6900E02BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4856BAF25552D6900E02BBF /* qwedfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = qwedfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4856BB325552D6900E02BBF /* qwedfUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = qwedfUITests.m; sourceTree = "<group>"; };
-		E4856BB525552D6900E02BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4856C1E2557010100E02BBF /* Chromium Embedded Framework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Chromium Embedded Framework.framework"; path = "qwedf/cef/Debug/Chromium Embedded Framework.framework"; sourceTree = "<group>"; };
+		E4856EA82557047500E02BBF /* libcef_dll_wrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libcef_dll_wrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4856EAA255704F300E02BBF /* cef.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cef.xcodeproj; path = qwedf.xcodeproj/../qwedf/cef/build/cef.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,20 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4856BA125552D6900E02BBF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4856BAC25552D6900E02BBF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				E4856EA92557047500E02BBF /* libcef_dll_wrapper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,10 +182,11 @@
 		E4856B8525552D6800E02BBF = {
 			isa = PBXGroup;
 			children = (
+				E4856EAA255704F300E02BBF /* cef.xcodeproj */,
+				E4856C1E2557010100E02BBF /* Chromium Embedded Framework.framework */,
 				E4856B9025552D6800E02BBF /* qwedf */,
-				E4856BA725552D6900E02BBF /* qwedfTests */,
-				E4856BB225552D6900E02BBF /* qwedfUITests */,
 				E4856B8F25552D6800E02BBF /* Products */,
+				E4856BF92556F46B00E02BBF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,8 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				E4856B8E25552D6800E02BBF /* qwedf.app */,
-				E4856BA425552D6900E02BBF /* qwedfTests.xctest */,
-				E4856BAF25552D6900E02BBF /* qwedfUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,28 +208,42 @@
 				E4856B9725552D6800E02BBF /* Assets.xcassets */,
 				E4856B9925552D6800E02BBF /* Main.storyboard */,
 				E4856B9C25552D6800E02BBF /* Info.plist */,
-				E4856B9D25552D6800E02BBF /* main.m */,
+				E4856B9D25552D6800E02BBF /* main.mm */,
 				E4856B9F25552D6800E02BBF /* qwedf.entitlements */,
 			);
 			path = qwedf;
 			sourceTree = "<group>";
 		};
-		E4856BA725552D6900E02BBF /* qwedfTests */ = {
+		E4856BF92556F46B00E02BBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E4856BA825552D6900E02BBF /* qwedfTests.m */,
-				E4856BAA25552D6900E02BBF /* Info.plist */,
+				E4856EA82557047500E02BBF /* libcef_dll_wrapper.a */,
 			);
-			path = qwedfTests;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E4856BB225552D6900E02BBF /* qwedfUITests */ = {
+		E4856EAB255704F300E02BBF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4856BB325552D6900E02BBF /* qwedfUITests.m */,
-				E4856BB525552D6900E02BBF /* Info.plist */,
+				E4856EC1255704F300E02BBF /* libcef_gtest.a */,
+				E4856EC3255704F300E02BBF /* cefclient */,
+				E4856EC5255704F300E02BBF /* cefclient Helper */,
+				E4856EC7255704F300E02BBF /* cefclient Helper (GPU) */,
+				E4856EC9255704F300E02BBF /* cefclient Helper (Plugin) */,
+				E4856ECB255704F300E02BBF /* cefclient Helper (Renderer) */,
+				E4856ECD255704F300E02BBF /* cefsimple */,
+				E4856ECF255704F300E02BBF /* cefsimple Helper */,
+				E4856ED1255704F300E02BBF /* cefsimple Helper (GPU) */,
+				E4856ED3255704F300E02BBF /* cefsimple Helper (Plugin) */,
+				E4856ED5255704F300E02BBF /* cefsimple Helper (Renderer) */,
+				E4856ED7255704F300E02BBF /* ceftests */,
+				E4856ED9255704F300E02BBF /* ceftests Helper */,
+				E4856EDB255704F300E02BBF /* ceftests Helper (GPU) */,
+				E4856EDD255704F300E02BBF /* ceftests Helper (Plugin) */,
+				E4856EDF255704F300E02BBF /* ceftests Helper (Renderer) */,
+				E4856EE1255704F300E02BBF /* libcef_dll_wrapper.a */,
 			);
-			path = qwedfUITests;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +256,7 @@
 				E4856B8A25552D6800E02BBF /* Sources */,
 				E4856B8B25552D6800E02BBF /* Frameworks */,
 				E4856B8C25552D6800E02BBF /* Resources */,
+				E4856C172556FAED00E02BBF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -150,42 +266,6 @@
 			productName = qwedf;
 			productReference = E4856B8E25552D6800E02BBF /* qwedf.app */;
 			productType = "com.apple.product-type.application";
-		};
-		E4856BA325552D6900E02BBF /* qwedfTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E4856BBB25552D6900E02BBF /* Build configuration list for PBXNativeTarget "qwedfTests" */;
-			buildPhases = (
-				E4856BA025552D6900E02BBF /* Sources */,
-				E4856BA125552D6900E02BBF /* Frameworks */,
-				E4856BA225552D6900E02BBF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E4856BA625552D6900E02BBF /* PBXTargetDependency */,
-			);
-			name = qwedfTests;
-			productName = qwedfTests;
-			productReference = E4856BA425552D6900E02BBF /* qwedfTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E4856BAE25552D6900E02BBF /* qwedfUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E4856BBE25552D6900E02BBF /* Build configuration list for PBXNativeTarget "qwedfUITests" */;
-			buildPhases = (
-				E4856BAB25552D6900E02BBF /* Sources */,
-				E4856BAC25552D6900E02BBF /* Frameworks */,
-				E4856BAD25552D6900E02BBF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E4856BB125552D6900E02BBF /* PBXTargetDependency */,
-			);
-			name = qwedfUITests;
-			productName = qwedfUITests;
-			productReference = E4856BAF25552D6900E02BBF /* qwedfUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -197,14 +277,6 @@
 				TargetAttributes = {
 					E4856B8D25552D6800E02BBF = {
 						CreatedOnToolsVersion = 12.1;
-					};
-					E4856BA325552D6900E02BBF = {
-						CreatedOnToolsVersion = 12.1;
-						TestTargetID = E4856B8D25552D6800E02BBF;
-					};
-					E4856BAE25552D6900E02BBF = {
-						CreatedOnToolsVersion = 12.1;
-						TestTargetID = E4856B8D25552D6800E02BBF;
 					};
 				};
 			};
@@ -219,14 +291,155 @@
 			mainGroup = E4856B8525552D6800E02BBF;
 			productRefGroup = E4856B8F25552D6800E02BBF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E4856EAB255704F300E02BBF /* Products */;
+					ProjectRef = E4856EAA255704F300E02BBF /* cef.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E4856B8D25552D6800E02BBF /* qwedf */,
-				E4856BA325552D6900E02BBF /* qwedfTests */,
-				E4856BAE25552D6900E02BBF /* qwedfUITests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E4856EC1255704F300E02BBF /* libcef_gtest.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcef_gtest.a;
+			remoteRef = E4856EC0255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856EC3255704F300E02BBF /* cefclient */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = cefclient;
+			path = cefclient.app;
+			remoteRef = E4856EC2255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856EC5255704F300E02BBF /* cefclient Helper */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = "cefclient Helper";
+			path = "cefclient Helper.app";
+			remoteRef = E4856EC4255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856EC7255704F300E02BBF /* cefclient Helper (GPU) */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = "cefclient Helper (GPU)";
+			path = "cefclient Helper (GPU).app";
+			remoteRef = E4856EC6255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856EC9255704F300E02BBF /* cefclient Helper (Plugin) */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = "cefclient Helper (Plugin)";
+			path = "cefclient Helper (Plugin).app";
+			remoteRef = E4856EC8255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856ECB255704F300E02BBF /* cefclient Helper (Renderer) */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = "cefclient Helper (Renderer)";
+			path = "cefclient Helper (Renderer).app";
+			remoteRef = E4856ECA255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856ECD255704F300E02BBF /* cefsimple */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = cefsimple;
+			path = cefsimple.app;
+			remoteRef = E4856ECC255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856ECF255704F300E02BBF /* cefsimple Helper */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = "cefsimple Helper";
+			path = "cefsimple Helper.app";
+			remoteRef = E4856ECE255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856ED1255704F300E02BBF /* cefsimple Helper (GPU) */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = "cefsimple Helper (GPU)";
+			path = "cefsimple Helper (GPU).app";
+			remoteRef = E4856ED0255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856ED3255704F300E02BBF /* cefsimple Helper (Plugin) */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = "cefsimple Helper (Plugin)";
+			path = "cefsimple Helper (Plugin).app";
+			remoteRef = E4856ED2255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856ED5255704F300E02BBF /* cefsimple Helper (Renderer) */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = "cefsimple Helper (Renderer)";
+			path = "cefsimple Helper (Renderer).app";
+			remoteRef = E4856ED4255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856ED7255704F300E02BBF /* ceftests */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = ceftests;
+			path = ceftests.app;
+			remoteRef = E4856ED6255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856ED9255704F300E02BBF /* ceftests Helper */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = "ceftests Helper";
+			path = "ceftests Helper.app";
+			remoteRef = E4856ED8255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856EDB255704F300E02BBF /* ceftests Helper (GPU) */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = "ceftests Helper (GPU)";
+			path = "ceftests Helper (GPU).app";
+			remoteRef = E4856EDA255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856EDD255704F300E02BBF /* ceftests Helper (Plugin) */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = "ceftests Helper (Plugin)";
+			path = "ceftests Helper (Plugin).app";
+			remoteRef = E4856EDC255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856EDF255704F300E02BBF /* ceftests Helper (Renderer) */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = "ceftests Helper (Renderer)";
+			path = "ceftests Helper (Renderer).app";
+			remoteRef = E4856EDE255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4856EE1255704F300E02BBF /* libcef_dll_wrapper.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcef_dll_wrapper.a;
+			remoteRef = E4856EE0255704F300E02BBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E4856B8C25552D6800E02BBF /* Resources */ = {
@@ -238,20 +451,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4856BA225552D6900E02BBF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4856BAD25552D6900E02BBF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -260,41 +459,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4856B9625552D6800E02BBF /* ViewController.m in Sources */,
-				E4856B9E25552D6800E02BBF /* main.m in Sources */,
+				E4856B9E25552D6800E02BBF /* main.mm in Sources */,
 				E4856B9325552D6800E02BBF /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4856BA025552D6900E02BBF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E4856BA925552D6900E02BBF /* qwedfTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4856BAB25552D6900E02BBF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E4856BB425552D6900E02BBF /* qwedfUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E4856BA625552D6900E02BBF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E4856B8D25552D6800E02BBF /* qwedf */;
-			targetProxy = E4856BA525552D6900E02BBF /* PBXContainerItemProxy */;
-		};
-		E4856BB125552D6900E02BBF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E4856B8D25552D6800E02BBF /* qwedf */;
-			targetProxy = E4856BB025552D6900E02BBF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E4856B9925552D6800E02BBF /* Main.storyboard */ = {
@@ -359,6 +529,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /Users/encse/projects/swiftplayground/qwedf/qwedf/cef;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -412,6 +583,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /Users/encse/projects/swiftplayground/qwedf/qwedf/cef;
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -425,17 +597,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = qwedf/qwedf.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8ASDZSTA53;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/qwedf/lib/Debug",
+				);
 				INFOPLIST_FILE = qwedf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -445,93 +624,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = qwedf/qwedf.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8ASDZSTA53;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/qwedf/lib/Debug",
+				);
 				INFOPLIST_FILE = qwedf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		E4856BBC25552D6900E02BBF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8ASDZSTA53;
-				INFOPLIST_FILE = qwedfTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedfTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/qwedf.app/Contents/MacOS/qwedf";
-			};
-			name = Debug;
-		};
-		E4856BBD25552D6900E02BBF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8ASDZSTA53;
-				INFOPLIST_FILE = qwedfTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedfTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/qwedf.app/Contents/MacOS/qwedf";
-			};
-			name = Release;
-		};
-		E4856BBF25552D6900E02BBF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8ASDZSTA53;
-				INFOPLIST_FILE = qwedfUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedfUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = qwedf;
-			};
-			name = Debug;
-		};
-		E4856BC025552D6900E02BBF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8ASDZSTA53;
-				INFOPLIST_FILE = qwedfUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedfUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = qwedf;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -552,24 +662,6 @@
 			buildConfigurations = (
 				E4856BB925552D6900E02BBF /* Debug */,
 				E4856BBA25552D6900E02BBF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E4856BBB25552D6900E02BBF /* Build configuration list for PBXNativeTarget "qwedfTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E4856BBC25552D6900E02BBF /* Debug */,
-				E4856BBD25552D6900E02BBF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E4856BBE25552D6900E02BBF /* Build configuration list for PBXNativeTarget "qwedfUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E4856BBF25552D6900E02BBF /* Debug */,
-				E4856BC025552D6900E02BBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
