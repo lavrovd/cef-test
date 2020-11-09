@@ -6,18 +6,22 @@
 //
 
 #import "AppDelegate.h"
+#import <Cocoa/Cocoa.h>
 
-@interface AppDelegate ()
-
-
+@interface AppDelegate () {
+    NSWindowController *myController;
+}
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+   
+    NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
+    myController = [storyBoard instantiateInitialController];
+    [myController showWindow:self];
+    
 }
-
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application

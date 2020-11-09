@@ -10,17 +10,14 @@
 #include "include/cef_browser.h"
 #include "include/cef_client.h"
 #include "include/wrapper/cef_library_loader.h"
-
+#include "AppDelegate.h"
 
 class MyCefClient : public CefClient,
                     public CefLifeSpanHandler {
 
   // CefLifeSpanHandler methods
   virtual void OnAfterCreated (CefRefPtr<CefBrowser> browser) OVERRIDE {
-    // The call to setDockIcon() in applicationDidFinishLaunching()
-    // is enough when running tiny via 'tiny.app/Contents/MacOS/tiny',
-    // but not enough when running it via 'open tiny.app'?!
-   // setDockIcon();
+ 
   }
 
   IMPLEMENT_REFCOUNTING (MyCefClient);
@@ -39,16 +36,16 @@ class BrowserApp : public CefApp, public CefBrowserProcessHandler {
 
   // CefBrowserProcessHandler methods:
   void OnContextInitialized() OVERRIDE {
-      CefWindowInfo window_info;
-      const char kStartupURL[] = "https://www.google.com";
-      
-      CefBrowserHost::CreateBrowser(
-          window_info,
-          new MyCefClient(),
-          kStartupURL,
-          CefBrowserSettings(),
-          nullptr,
-          nullptr);
+//      CefWindowInfo window_info;
+//      const char kStartupURL[] = "https://www.google.com";
+//
+//      CefBrowserHost::CreateBrowser(
+//          window_info,
+//          new MyCefClient(),
+//          kStartupURL,
+//          CefBrowserSettings(),
+//          nullptr,
+//          nullptr);
   }
 
  private:
@@ -56,49 +53,6 @@ class BrowserApp : public CefApp, public CefBrowserProcessHandler {
   DISALLOW_COPY_AND_ASSIGN(BrowserApp);
 };
 
-
-@interface SharedAppDelegate : NSObject <NSApplicationDelegate>
-- (void)applicationWillFinishLaunching:(NSNotification *)aNotification;
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification;
-@end
-
-@implementation SharedAppDelegate
-
-// Called immediately before the event loop starts.
-// Right place for setting up app level things.
--(void)applicationWillFinishLaunching:(NSNotification *)aNotification
-{
-//    id menubar = [[NSMenu new] autorelease];
-//    id appMenuItem = [[NSMenuItem new] autorelease];
-//    [menubar addItem:appMenuItem];
-//    [NSApp setMainMenu:menubar];
-//    id appMenu = [[NSMenu new] autorelease];
-//    id appName = [[NSProcessInfo processInfo] processName];
-//    id quitTitle = [@"Quit " stringByAppendingString:appName];
-//    id quitMenuItem = [[[NSMenuItem alloc] initWithTitle:quitTitle
-//                         action:@selector(terminate:) keyEquivalent:@"q"]
-//                         autorelease];
-//    [appMenu addItem:quitMenuItem];
-//    [appMenuItem setSubmenu:appMenu];
-//    [NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
-}
-
-// Called when the event loop has been started,
-// document double clicks have already been processed,
-// but no events have been executed yet.
-// Right place for setting up event loop level things.
-// Also right place for setting dock icon, since doing it earlier
-// won't override the default one set by NSApp.
--(void)applicationDidFinishLaunching:(NSNotification *)notification
-{
-//    // Set dock icon if desired
-//    setDockIcon();
-//
-//    // Push app to foreground
-//    [g_window makeKeyAndOrderFront:nil];
-//    [NSApp activateIgnoringOtherApps:YES];
-}
-@end
 
 
 
@@ -115,15 +69,21 @@ int main(int argc, const char * argv[]) {
         
         [NSApplication sharedApplication];
 
-        SharedAppDelegate* delegate = [SharedAppDelegate new];
+        AppDelegate* delegate = [AppDelegate new];
         [NSApp setDelegate:delegate];
         
         CefMainArgs main_args;
         CefRefPtr<CefApp> app = new BrowserApp();
         CefSettings settings;
+       
         CefInitialize(main_args, settings, app, NULL);
+        
         CefRunMessageLoop();
         
+        //while (true) {
+        //    CefDoMessageLoopWork();
+        //}
+      
     }
  
     
