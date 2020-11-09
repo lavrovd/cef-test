@@ -309,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				E4856B9125552D6800E02BBF /* AppDelegate.h */,
+				E48571342559551100E02BBF /* AppDelegate.mm */,
 				E4856B9425552D6800E02BBF /* ViewController.h */,
 				E4856B9525552D6800E02BBF /* ViewController.mm */,
 				E4856B9725552D6800E02BBF /* Assets.xcassets */,
@@ -316,7 +317,6 @@
 				E4856B9C25552D6800E02BBF /* Info.plist */,
 				E4856B9D25552D6800E02BBF /* main.mm */,
 				E48571182559539200E02BBF /* BrowserApp.h */,
-				E48571342559551100E02BBF /* AppDelegate.mm */,
 				E4856B9F25552D6800E02BBF /* qwedf.entitlements */,
 			);
 			path = qwedf;

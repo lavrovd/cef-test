@@ -11,10 +11,8 @@
 #ifndef AppDelegate_h
 #define AppDelegate_h
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>{
- //   (BrowserApp *)browserApp;
+@interface AppDelegate : NSObject <NSApplicationDelegate> {
 }
-//@property (nonatomic, retain) BrowserApp *browserApp;
 -(id) initWithCefApp:(BrowserApp *)app;
 
 @end

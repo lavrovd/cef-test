@@ -7,16 +7,21 @@
 
 #import "ViewController.h"
 #import "AppDelegate.h"
+#import "BrowserApp.h"
 // #import <Cocoa/Cocoa.h>
 
 @implementation ViewController
 
+-(void) setCefApp:(BrowserApp *)app {
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
-    //AppDelegate *appDelegate = (AppDelegate*)[[NSApplication sharedApplication] delegate];
-    //NSLog([appDelegate browserApp]);
+
+//    AppDelegate *appDelegate = (AppDelegate*)[[NSApplication sharedApplication] delegate];
+//    NSLog([appDelegate browserApp]);
 //    someString = appDelegate.myString;  //..to read
 //    appDelegate.myString = some NSString;     //..to write
     

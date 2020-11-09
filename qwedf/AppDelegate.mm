@@ -6,18 +6,17 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 #import <Cocoa/Cocoa.h>
 
 
 @interface AppDelegate () {
     BrowserApp *browserApp;
-    NSWindowController *myController;
+    NSWindowController *windowController;
 }
 @end
 
 @implementation AppDelegate
-//@synthesize browserApp;
-
 
 - (id)initWithCefApp:(BrowserApp *)app {
     self = [super init];
@@ -30,8 +29,12 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
    
     NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
-    myController = [storyBoard instantiateInitialController];
-    [myController showWindow:self];
+    windowController = [storyBoard instantiateInitialController];
+    
+    ViewController *viewController = (ViewController *)windowController.contentViewController;
+   
+    [viewController setCefApp:nil];
+    [windowController showWindow:self];
     
 }
 
