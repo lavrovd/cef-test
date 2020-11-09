@@ -7,26 +7,30 @@
 
 #import "ViewController.h"
 #import "AppDelegate.h"
-#import "BrowserApp.h"
-// #import <Cocoa/Cocoa.h>
+#include "include/cef_app.h"
+#include "include/cef_browser.h"
+#include "include/cef_client.h"
+#include "include/wrapper/cef_library_loader.h"
+#include "AppDelegate.h"
+
 
 @implementation ViewController
 
--(void) setCefApp:(BrowserApp *)app {
-    
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    CefWindowInfo window_info;
+    const char kStartupURL[] = "https://www.google.com";
 
-//    AppDelegate *appDelegate = (AppDelegate*)[[NSApplication sharedApplication] delegate];
-//    NSLog([appDelegate browserApp]);
-//    someString = appDelegate.myString;  //..to read
-//    appDelegate.myString = some NSString;     //..to write
-    
-    
-    // Do any additional setup after loading the view.
+    CefBrowserHost::CreateBrowser(
+      window_info,
+      nil, //new MyCefClient(),
+      kStartupURL,
+      CefBrowserSettings(),
+      nullptr,
+      nullptr);
+ 
 }
 
 

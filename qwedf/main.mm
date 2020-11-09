@@ -11,7 +11,35 @@
 #include "include/cef_client.h"
 #include "include/wrapper/cef_library_loader.h"
 #include "AppDelegate.h"
-#include "BrowserApp.h"
+
+
+
+
+class BrowserApp : public CefApp, public CefBrowserProcessHandler {
+ public:
+  BrowserApp(AppDelegate *appDelegate) {
+      this->appDelegate = appDelegate;
+  }
+
+  // CefApp methods:
+  CefRefPtr<CefBrowserProcessHandler> GetBrowserProcessHandler() OVERRIDE {
+    return this;
+  }
+
+  // CefBrowserProcessHandler methods:
+  void OnContextInitialized() OVERRIDE {
+      [this->appDelegate OnContextInitialized];
+
+  }
+
+ private:
+    AppDelegate *appDelegate;
+    
+  IMPLEMENT_REFCOUNTING(BrowserApp);
+  DISALLOW_COPY_AND_ASSIGN(BrowserApp);
+};
+
+
 
 int main(int argc, const char * argv[]) {
     // Load the CEF framework library at runtime instead of linking directly
@@ -24,12 +52,14 @@ int main(int argc, const char * argv[]) {
         
         [NSApplication sharedApplication];
         
+     
+        AppDelegate* delegate = [AppDelegate new];
+        [NSApp setDelegate:delegate];
+        
         CefMainArgs main_args;
-        CefRefPtr<BrowserApp> app = new BrowserApp();
+        CefRefPtr<BrowserApp> app = new BrowserApp(delegate);
         CefSettings settings;
         
-        AppDelegate* delegate = [[AppDelegate alloc] initWithCefApp:app.get()];
-        [NSApp setDelegate:delegate];
         
         CefInitialize(main_args, settings, app, NULL);
         

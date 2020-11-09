@@ -11,31 +11,34 @@
 
 
 @interface AppDelegate () {
-    BrowserApp *browserApp;
+    bool finishedLaunching;
+    bool contextInitialized;
     NSWindowController *windowController;
 }
+- (void) nextInitializationStep;
 @end
 
 @implementation AppDelegate
 
-- (id)initWithCefApp:(BrowserApp *)app {
-    self = [super init];
-    if (self) {
-        browserApp = app;
+- (void) nextInitializationStep {
+    @synchronized(self){
+        if (finishedLaunching && contextInitialized) {
+            NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
+            windowController = [storyBoard instantiateInitialController];
+            [windowController showWindow:self];
+        }
     }
-    return self;
+}
+
+- (void)OnContextInitialized {
+    contextInitialized = true;
+    [self nextInitializationStep];
+   
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-   
-    NSStoryboard *storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
-    windowController = [storyBoard instantiateInitialController];
-    
-    ViewController *viewController = (ViewController *)windowController.contentViewController;
-   
-    [viewController setCefApp:nil];
-    [windowController showWindow:self];
-    
+    finishedLaunching = true;
+    [self nextInitializationStep];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

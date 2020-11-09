@@ -6,13 +6,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "BrowserApp.h"
 
 #ifndef ViewController_h
 #define ViewController_h
 
 @interface ViewController : NSViewController
--(void) setCefApp:(BrowserApp *)app;
 
 @end
 

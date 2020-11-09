@@ -225,7 +225,6 @@
 		E485709225584A6E00E02BBF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E485709425584A7300E02BBF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		E48570A025584ACD00E02BBF /* cef_sandbox.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = cef_sandbox.a; path = qwedf/cef/Debug/cef_sandbox.a; sourceTree = "<group>"; };
-		E48571182559539200E02BBF /* BrowserApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserApp.h; sourceTree = "<group>"; };
 		E48571342559551100E02BBF /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -316,7 +315,6 @@
 				E4856B9925552D6800E02BBF /* Main.storyboard */,
 				E4856B9C25552D6800E02BBF /* Info.plist */,
 				E4856B9D25552D6800E02BBF /* main.mm */,
-				E48571182559539200E02BBF /* BrowserApp.h */,
 				E4856B9F25552D6800E02BBF /* qwedf.entitlements */,
 			);
 			path = qwedf;
