@@ -14,6 +14,39 @@
 #include "AppDelegate.h"
 
 
+class SimpleHandler :
+    public CefClient,
+    public CefRenderHandler
+{
+ public:
+   SimpleHandler() {
+  
+   }
+    virtual CefRefPtr<CefRenderHandler> GetRenderHandler() override {
+        return this;
+    }
+
+    virtual void GetViewRect(CefRefPtr<CefBrowser> browser, CefRect& rect) override {
+        rect.Set(0,0,100,100);
+    }
+    
+    virtual void OnPaint(CefRefPtr<CefBrowser> browser,
+                         PaintElementType type,
+                         const RectList& dirtyRects,
+                         const void* buffer,
+                         int width,
+                         int height) override {
+        NSLog(@"paint");
+    }
+
+    ///
+ private:
+
+  // Include the default reference counting implementation.
+  IMPLEMENT_REFCOUNTING(SimpleHandler);
+};
+
+
 @implementation ViewController
 
 
@@ -21,11 +54,13 @@
     [super viewDidLoad];
 
     CefWindowInfo window_info;
+    window_info.SetAsWindowless(nil/*<#void *parent#>*/);
     const char kStartupURL[] = "https://www.google.com";
 
+    
     CefBrowserHost::CreateBrowser(
       window_info,
-      nil, //new MyCefClient(),
+      new SimpleHandler(),
       kStartupURL,
       CefBrowserSettings(),
       nullptr,
