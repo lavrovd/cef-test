@@ -6,9 +6,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "BrowserApp.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
-
+-(id) initWithCefApp:(BrowserApp *)app;
 
 @end
 

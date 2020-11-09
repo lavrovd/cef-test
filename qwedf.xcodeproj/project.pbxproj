@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E4856B9325552D6800E02BBF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4856B9225552D6800E02BBF /* AppDelegate.m */; };
 		E4856B9625552D6800E02BBF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4856B9525552D6800E02BBF /* ViewController.m */; };
 		E4856B9825552D6800E02BBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4856B9725552D6800E02BBF /* Assets.xcassets */; };
 		E4856B9B25552D6800E02BBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4856B9925552D6800E02BBF /* Main.storyboard */; };
@@ -34,6 +33,7 @@
 		E48570A225584B1800E02BBF /* cef_sandbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E48570A025584ACD00E02BBF /* cef_sandbox.a */; };
 		E48570A325584B2A00E02BBF /* cef_sandbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E48570A025584ACD00E02BBF /* cef_sandbox.a */; };
 		E48570A825584B3900E02BBF /* cef_sandbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E48570A025584ACD00E02BBF /* cef_sandbox.a */; };
+		E48571352559551100E02BBF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = E48571342559551100E02BBF /* AppDelegate.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,7 +201,6 @@
 
 /* Begin PBXFileReference section */
 		E4856B9125552D6800E02BBF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E4856B9225552D6800E02BBF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E4856B9425552D6800E02BBF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E4856B9525552D6800E02BBF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E4856B9725552D6800E02BBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -225,6 +224,8 @@
 		E485709225584A6E00E02BBF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E485709425584A7300E02BBF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		E48570A025584ACD00E02BBF /* cef_sandbox.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = cef_sandbox.a; path = qwedf/cef/Debug/cef_sandbox.a; sourceTree = "<group>"; };
+		E48571182559539200E02BBF /* BrowserApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserApp.h; sourceTree = "<group>"; };
+		E48571342559551100E02BBF /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,13 +307,14 @@
 			isa = PBXGroup;
 			children = (
 				E4856B9125552D6800E02BBF /* AppDelegate.h */,
-				E4856B9225552D6800E02BBF /* AppDelegate.m */,
 				E4856B9425552D6800E02BBF /* ViewController.h */,
 				E4856B9525552D6800E02BBF /* ViewController.m */,
 				E4856B9725552D6800E02BBF /* Assets.xcassets */,
 				E4856B9925552D6800E02BBF /* Main.storyboard */,
 				E4856B9C25552D6800E02BBF /* Info.plist */,
 				E4856B9D25552D6800E02BBF /* main.mm */,
+				E48571182559539200E02BBF /* BrowserApp.h */,
+				E48571342559551100E02BBF /* AppDelegate.mm */,
 				E4856B9F25552D6800E02BBF /* qwedf.entitlements */,
 			);
 			path = qwedf;
@@ -703,8 +705,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4856B9625552D6800E02BBF /* ViewController.m in Sources */,
+				E48571352559551100E02BBF /* AppDelegate.mm in Sources */,
 				E4856B9E25552D6800E02BBF /* main.mm in Sources */,
-				E4856B9325552D6800E02BBF /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

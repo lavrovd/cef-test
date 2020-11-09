@@ -11,51 +11,7 @@
 #include "include/cef_client.h"
 #include "include/wrapper/cef_library_loader.h"
 #include "AppDelegate.h"
-
-class MyCefClient : public CefClient,
-                    public CefLifeSpanHandler {
-
-  // CefLifeSpanHandler methods
-  virtual void OnAfterCreated (CefRefPtr<CefBrowser> browser) OVERRIDE {
- 
-  }
-
-  IMPLEMENT_REFCOUNTING (MyCefClient);
-};
-
-
-// Minimal implementation of CefApp for the browser process.
-class BrowserApp : public CefApp, public CefBrowserProcessHandler {
- public:
-  BrowserApp() {}
-
-  // CefApp methods:
-  CefRefPtr<CefBrowserProcessHandler> GetBrowserProcessHandler() OVERRIDE {
-    return this;
-  }
-
-  // CefBrowserProcessHandler methods:
-  void OnContextInitialized() OVERRIDE {
-//      CefWindowInfo window_info;
-//      const char kStartupURL[] = "https://www.google.com";
-//
-//      CefBrowserHost::CreateBrowser(
-//          window_info,
-//          new MyCefClient(),
-//          kStartupURL,
-//          CefBrowserSettings(),
-//          nullptr,
-//          nullptr);
-  }
-
- private:
-  IMPLEMENT_REFCOUNTING(BrowserApp);
-  DISALLOW_COPY_AND_ASSIGN(BrowserApp);
-};
-
-
-
-
+#include "BrowserApp.h"
 
 int main(int argc, const char * argv[]) {
     // Load the CEF framework library at runtime instead of linking directly
@@ -63,19 +19,18 @@ int main(int argc, const char * argv[]) {
     CefScopedLibraryLoader library_loader;
     if (!library_loader.LoadInMain())
       return 1;
-
     
     @autoreleasepool {
         
         [NSApplication sharedApplication];
-
-        AppDelegate* delegate = [AppDelegate new];
-        [NSApp setDelegate:delegate];
         
         CefMainArgs main_args;
-        CefRefPtr<CefApp> app = new BrowserApp();
+        CefRefPtr<BrowserApp> app = new BrowserApp();
         CefSettings settings;
-       
+        
+        AppDelegate* delegate = [[AppDelegate alloc] initWithCefApp:app.get()];
+        [NSApp setDelegate:delegate];
+        
         CefInitialize(main_args, settings, app, NULL);
         
         CefRunMessageLoop();
