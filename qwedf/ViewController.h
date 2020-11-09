@@ -7,8 +7,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+
+#ifndef ViewController_h
+#define ViewController_h
+
 @interface ViewController : NSViewController
 
 
 @end
 
+#endif

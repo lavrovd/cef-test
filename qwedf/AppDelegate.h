@@ -8,8 +8,15 @@
 #import <Cocoa/Cocoa.h>
 #import "BrowserApp.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+#ifndef AppDelegate_h
+#define AppDelegate_h
+
+@interface AppDelegate : NSObject <NSApplicationDelegate>{
+ //   (BrowserApp *)browserApp;
+}
+//@property (nonatomic, retain) BrowserApp *browserApp;
 -(id) initWithCefApp:(BrowserApp *)app;
 
 @end
 
+#endif

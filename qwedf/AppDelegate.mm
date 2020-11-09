@@ -10,12 +10,14 @@
 
 
 @interface AppDelegate () {
-    BrowserApp* browserApp;
+    BrowserApp *browserApp;
     NSWindowController *myController;
 }
 @end
 
 @implementation AppDelegate
+//@synthesize browserApp;
+
 
 - (id)initWithCefApp:(BrowserApp *)app {
     self = [super init];

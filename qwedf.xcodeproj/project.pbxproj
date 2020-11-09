@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E4856B9625552D6800E02BBF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4856B9525552D6800E02BBF /* ViewController.m */; };
+		E4856B9625552D6800E02BBF /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4856B9525552D6800E02BBF /* ViewController.mm */; };
 		E4856B9825552D6800E02BBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4856B9725552D6800E02BBF /* Assets.xcassets */; };
 		E4856B9B25552D6800E02BBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4856B9925552D6800E02BBF /* Main.storyboard */; };
 		E4856B9E25552D6800E02BBF /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4856B9D25552D6800E02BBF /* main.mm */; };
@@ -34,6 +34,7 @@
 		E48570A325584B2A00E02BBF /* cef_sandbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E48570A025584ACD00E02BBF /* cef_sandbox.a */; };
 		E48570A825584B3900E02BBF /* cef_sandbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E48570A025584ACD00E02BBF /* cef_sandbox.a */; };
 		E48571352559551100E02BBF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = E48571342559551100E02BBF /* AppDelegate.mm */; };
+		E485715E25595A4900E02BBF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E485709225584A6E00E02BBF /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,7 +203,7 @@
 /* Begin PBXFileReference section */
 		E4856B9125552D6800E02BBF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E4856B9425552D6800E02BBF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E4856B9525552D6800E02BBF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E4856B9525552D6800E02BBF /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		E4856B9725552D6800E02BBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4856B9A25552D6800E02BBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4856B9C25552D6800E02BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -233,6 +234,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E485715E25595A4900E02BBF /* Cocoa.framework in Frameworks */,
 				E4856EA92557047500E02BBF /* libcef_dll_wrapper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +310,7 @@
 			children = (
 				E4856B9125552D6800E02BBF /* AppDelegate.h */,
 				E4856B9425552D6800E02BBF /* ViewController.h */,
-				E4856B9525552D6800E02BBF /* ViewController.m */,
+				E4856B9525552D6800E02BBF /* ViewController.mm */,
 				E4856B9725552D6800E02BBF /* Assets.xcassets */,
 				E4856B9925552D6800E02BBF /* Main.storyboard */,
 				E4856B9C25552D6800E02BBF /* Info.plist */,
@@ -704,7 +706,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4856B9625552D6800E02BBF /* ViewController.m in Sources */,
+				E4856B9625552D6800E02BBF /* ViewController.mm in Sources */,
 				E48571352559551100E02BBF /* AppDelegate.mm in Sources */,
 				E4856B9E25552D6800E02BBF /* main.mm in Sources */,
 			);
