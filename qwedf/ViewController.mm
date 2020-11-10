@@ -19,21 +19,38 @@
 #import <QuartzCore/CAMetalLayer.h>
 #import <simd/simd.h>
 
-class SimpleHandler :
-    public CefClient,
-    public CefRenderHandler
-   
+
+@interface AAPLRenderer : NSObject<MTKViewDelegate>
+- (nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)mtkView;
+
+- (void)getViewRect:(CefRefPtr<CefBrowser>)browser
+               rect:(CefRect&)rect;
+
+- (void)onBrowserPaint:(CefRefPtr<CefBrowser>)browser
+                  type:(CefRenderHandler::PaintElementType)type
+            dirtyRects:(const CefRenderHandler::RectList)dirtyRects
+                buffer:(const void*)buffer
+                 width:(int)width
+                height:(int)height;
+@end
+
+
+class SimpleHandler : public CefClient, public CefRenderHandler
 {
- public:
-   SimpleHandler() {
-  
-   }
-    virtual CefRefPtr<CefRenderHandler> GetRenderHandler() override {
+public:
+    SimpleHandler(AAPLRenderer* renderer)
+    {
+        this->renderer = renderer;
+    }
+    
+    virtual CefRefPtr<CefRenderHandler> GetRenderHandler() override
+    {
         return this;
     }
-
-    virtual void GetViewRect(CefRefPtr<CefBrowser> browser, CefRect& rect) override {
-        rect.Set(0,0,100,100);
+    
+    virtual void GetViewRect(CefRefPtr<CefBrowser> browser, CefRect& rect) override
+    {
+        [renderer getViewRect:browser rect:rect];
     }
     
     virtual void OnPaint(CefRefPtr<CefBrowser> browser,
@@ -41,22 +58,21 @@ class SimpleHandler :
                          const RectList& dirtyRects,
                          const void* buffer,
                          int width,
-                         int height) override {
-        NSLog(@"paint");
+                         int height) override
+    {
+        [renderer onBrowserPaint:browser type: type dirtyRects: dirtyRects buffer: buffer width: width height: height];
+        //        uint64_t tid;
+        //        pthread_threadid_np(NULL, &tid);
+        //        NSLog(@"paint : %lld\n", tid);
+        
     }
-
+    
     ///
- private:
-
-  // Include the default reference counting implementation.
-  IMPLEMENT_REFCOUNTING(SimpleHandler);
+private:
+    AAPLRenderer* renderer;
+    // Include the default reference counting implementation.
+    IMPLEMENT_REFCOUNTING(SimpleHandler);
 };
-
-
-@interface AAPLRenderer : NSObject<MTKViewDelegate>
-- (nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)mtkView;
-@end
-
 
 
 
@@ -65,13 +81,9 @@ class SimpleHandler :
 {
     int i;
     id<MTLDevice> _device;
-
-    // The command queue used to pass commands to the device.
     id<MTLCommandQueue> _commandQueue;
+    
 }
-
-
-
 
 - (nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)mtkView
 {
@@ -79,16 +91,36 @@ class SimpleHandler :
     if (self)
     {
         _device = mtkView.device;
-
-        // Create the command queue
         _commandQueue = [_device newCommandQueue];
     }
 
     return self;
 }
 
+
+- (void)getViewRect:(CefRefPtr<CefBrowser>)browser rect:(CefRect&)rect
+{
+    rect.Set(0,0,1000,1000);
+}
+
+- (void)onBrowserPaint:(CefRefPtr<CefBrowser>)browser
+                  type:(CefRenderHandler::PaintElementType)type
+            dirtyRects:(const CefRenderHandler::RectList)dirtyRects
+                buffer:(const void*)buffer
+                 width:(int)width
+                height:(int)height
+{
+    
+}
+
 - (void)drawInMTKView:(nonnull MTKView *)view
 {
+    
+//    uint64_t tid;
+//    pthread_threadid_np(NULL, &tid);
+//    NSLog(@"draw : %lld\n", tid);
+    
+    
     // The render pass descriptor references the texture into which Metal should draw
     MTLRenderPassDescriptor *renderPassDescriptor = view.currentRenderPassDescriptor;
     if (renderPassDescriptor == nil) {
@@ -112,6 +144,7 @@ class SimpleHandler :
 
 - (void)mtkView:(nonnull MTKView *)view drawableSizeWillChange:(CGSize)size
 {
+    
 }
 
 @end
@@ -125,46 +158,45 @@ class SimpleHandler :
 
 
 @implementation ViewController {
-    MTKView *_view;
-    AAPLRenderer *_renderer;
+    AAPLRenderer *renderer;
+    SimpleHandler *simpleHandler;
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
-
-    _view = self.mtkView;
+    
     self.mtkView.device = MTLCreateSystemDefaultDevice();
     self.mtkView.clearColor = MTLClearColorMake(0.0, 0.5, 1.0, 1.0);
-
-    _renderer = [[AAPLRenderer alloc] initWithMetalKitView:_view];
-
-    if(!_renderer) {
+    
+    renderer = [[AAPLRenderer alloc] initWithMetalKitView:self.mtkView];
+    simpleHandler = new SimpleHandler(renderer);
+    
+    if(!renderer) {
         NSLog(@"Renderer initialization failed");
         return;
     }
-
-    [_renderer
-        mtkView:self.mtkView
-        drawableSizeWillChange:_view.drawableSize
-     ];
-    self.mtkView.delegate = _renderer;
     
- 
-
+    [renderer
+     mtkView:self.mtkView
+     drawableSizeWillChange:self.mtkView.drawableSize
+     ];
+    
+    self.mtkView.delegate = renderer;
+    
+    
     CefWindowInfo window_info;
-   // window_info.SetAsWindowless(nil/*void *parent*/);
+    window_info.SetAsWindowless(nil/*void *parent*/);
     const char kStartupURL[] = "https://www.google.com";
-
-
+    
+    
     CefBrowserHost::CreateBrowser(
-      window_info,
-      new SimpleHandler(),
-      kStartupURL,
-      CefBrowserSettings(),
-      nullptr,
-      nullptr);
+                                  window_info,
+                                  simpleHandler,
+                                  kStartupURL,
+                                  CefBrowserSettings(),
+                                  nullptr,
+                                  nullptr);
     
     
 }
