@@ -80,9 +80,10 @@ private:
 @implementation AAPLRenderer
 {
     int i;
-    id<MTLDevice> _device;
-    id<MTLCommandQueue> _commandQueue;
-    
+    id<MTLDevice> device;
+    id<MTLCommandQueue> commandQueue;
+    id<MTLTexture> texture;
+    id<MTLComputePipelineState> computePipelineState;
 }
 
 - (nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)mtkView
@@ -90,8 +91,16 @@ private:
     self = [super init];
     if (self)
     {
-        _device = mtkView.device;
-        _commandQueue = [_device newCommandQueue];
+        device = mtkView.device;
+        commandQueue = [device newCommandQueue];
+        
+        MTKTextureLoader *loader = [[MTKTextureLoader alloc] initWithDevice: device];
+        NSURL *url = [[NSBundle mainBundle] URLForResource:@"codinghorror" withExtension:@"png"];
+        texture = [loader newTextureWithContentsOfURL:url options:nil error:nil];
+       
+        id<MTLLibrary> library = [device newDefaultLibrary];
+        id<MTLFunction> computeShader = [library newFunctionWithName: @"compute_shader"];
+        computePipelineState = [device newComputePipelineStateWithFunction:computeShader error: nil];
     }
 
     return self;
@@ -123,7 +132,8 @@ private:
     
     // The render pass descriptor references the texture into which Metal should draw
     MTLRenderPassDescriptor *renderPassDescriptor = view.currentRenderPassDescriptor;
-    if (renderPassDescriptor == nil) {
+    if (renderPassDescriptor == nil)
+    {
         NSLog(@"currentRenderPassDescriptor failed");
     }
 
@@ -132,12 +142,39 @@ private:
     renderPassDescriptor.colorAttachments[0].storeAction = MTLStoreActionStore;
 
     
-    id<MTLCommandBuffer> commandBuffer = [_commandQueue commandBuffer];
+    id<MTLCommandBuffer> commandBuffer = [commandQueue commandBuffer];
     
     id<MTLRenderCommandEncoder> commandEncoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor];
     [commandEncoder endEncoding];
     
-    id<MTLDrawable> drawable = view.currentDrawable;
+    id<CAMetalDrawable> drawable = view.currentDrawable;
+    if (drawable != nil && computePipelineState != nil)
+    {
+        id<MTLTexture> drawingTexture = [drawable texture];
+        
+        if (drawingTexture != nil)
+        {
+           
+            id<MTLComputeCommandEncoder> encoder = [commandBuffer computeCommandEncoder];
+            if (encoder != nil)
+            {
+                [encoder setComputePipelineState:computePipelineState];
+                [encoder setTexture:texture atIndex:0];
+                [encoder setTexture:drawingTexture atIndex:1];
+                
+                MTLSize threadGroupCount = MTLSizeMake(16, 16, 1);
+                MTLSize threadGroups = MTLSizeMake(
+                                                   texture.width / threadGroupCount.width,
+                                                   texture.height / threadGroupCount.height,
+                                                   1);
+                [encoder dispatchThreadgroups:threadGroups threadsPerThreadgroup: threadGroupCount];
+                [encoder endEncoding];
+                
+            }
+            
+        }
+    }
+    
     [commandBuffer presentDrawable:drawable];
     [commandBuffer commit];
 }
@@ -168,6 +205,7 @@ private:
     
     self.mtkView.device = MTLCreateSystemDefaultDevice();
     self.mtkView.clearColor = MTLClearColorMake(0.0, 0.5, 1.0, 1.0);
+    self.mtkView.framebufferOnly = false;
     
     renderer = [[AAPLRenderer alloc] initWithMetalKitView:self.mtkView];
     simpleHandler = new SimpleHandler(renderer);
