@@ -56,12 +56,14 @@ int main(int argc, const char * argv[]) {
         AppDelegate* delegate = [AppDelegate new];
         [NSApp setDelegate:delegate];
         
-        CefMainArgs main_args(4, new char*[]{
-            "xxx",
-            "--show-fps-counter",
-            "--disable-gpu-vsync",
+        
+        CefMainArgs main_args(2, new char*[]{
+            "dummy",
+            "--use-mock-keychain",
+            //"--show-fps-counter",
+            //"--disable-gpu-vsync",
             //"--disable-frame-rate-limit",
-            "--use-mock-keychain"
+           
         });
       
        

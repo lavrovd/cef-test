@@ -18,6 +18,11 @@
 #import <Cocoa/Cocoa.h>
 #import <QuartzCore/CAMetalLayer.h>
 #import <simd/simd.h>
+#import <mach/mach.h>
+
+struct ShaderParameters {
+    simd::float2 mouse;
+};
 
 typedef enum MouseEventKind : NSUInteger {
     kUp,
@@ -216,6 +221,8 @@ private:
 // Main class performing the rendering
 @implementation AAPLRenderer
 {
+    NSDate *date;
+    float fps;
     int i;
     MTKView * mtkView;
     id<MTLDevice> device;
@@ -339,8 +346,12 @@ private:
             int h = rect.height;
             MTLRegion region = MTLRegionMake2D(x, y, w, h);
             
-            
-            [texture replaceRegion:region mipmapLevel:0 withBytes:(char*)buffer + (y * width + x) * 4 bytesPerRow:4 * width];
+            [texture
+                replaceRegion:region
+                mipmapLevel:0
+                withBytes:(char*)buffer + (y * width + x) * 4
+                bytesPerRow:4 * width
+             ];
            
         }
     }
@@ -349,6 +360,7 @@ private:
 
 - (void)drawInMTKView:(nonnull MTKView *)view
 {
+    
     // The render pass descriptor references the texture into which Metal should draw
     MTLRenderPassDescriptor *renderPassDescriptor = view.currentRenderPassDescriptor;
     if (renderPassDescriptor == nil)
@@ -356,7 +368,13 @@ private:
         NSLog(@"currentRenderPassDescriptor failed");
     }
 
-    renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0, sin(i++ / 2 / 3.14159/10)/2+0.5, 0, 1);
+    i++;
+    renderPassDescriptor.colorAttachments[0].clearColor =
+        MTLClearColorMake(
+                  sin(i / 2 / 3.14159 / 17)/2+0.5,
+                  sin(i / 2 / 3.14159 / 20)/2+0.5,
+                  sin(i / 2 / 3.14159 / 13)/2+0.5,
+                  1);
     renderPassDescriptor.colorAttachments[0].loadAction = MTLLoadActionClear;
     renderPassDescriptor.colorAttachments[0].storeAction = MTLStoreActionStore;
 
@@ -377,17 +395,40 @@ private:
             id<MTLComputeCommandEncoder> encoder = [commandBuffer computeCommandEncoder];
             if (encoder != nil)
             {
-                [encoder setComputePipelineState:computePipelineState];
-                [encoder setTexture:texture atIndex:0];
-                [encoder setTexture:drawingTexture atIndex:1];
-                [encoder setTexture:drawingTexture atIndex:2];
+                ShaderParameters params;
+               
                 
-                MTLSize threadGroupCount = MTLSizeMake(16, 16, 1);
-                MTLSize threadGroups = MTLSizeMake(
-                                                   texture.width / threadGroupCount.width,
-                                                   texture.height / threadGroupCount.height,
+                
+                CGEventRef dummyEvent = CGEventCreate(NULL);
+                CGPoint point = CGEventGetLocation(dummyEvent);
+                float scaleFactor = [self getDeviceScaleFactor];
+                params.mouse = simd::make_float2(point.x * scaleFactor, point.y * scaleFactor);
+                CFRelease(dummyEvent);
+                
+                
+                [encoder setComputePipelineState:computePipelineState];
+                
+                [encoder
+                    setBytes: &params
+                    length: sizeof(params)
+                    atIndex: 0
+                 ];
+                [encoder setTexture:texture atIndex:1];
+                [encoder setTexture:drawingTexture atIndex:2];
+                [encoder setTexture:drawingTexture atIndex:3];
+              
+                NSUInteger w = computePipelineState.threadExecutionWidth;
+                NSUInteger h = computePipelineState.maxTotalThreadsPerThreadgroup / w;
+                MTLSize threadsPerThreadgroup = MTLSizeMake(w, h, 1);
+                
+                MTLSize threadsPerGrid = MTLSizeMake(
+                                                   texture.width,
+                                                   texture.height,
                                                    1);
-                [encoder dispatchThreadgroups:threadGroups threadsPerThreadgroup: threadGroupCount];
+                [encoder
+                    dispatchThreads:threadsPerGrid
+                    threadsPerThreadgroup:threadsPerThreadgroup
+                ];
                 [encoder endEncoding];
                 
             }
@@ -397,6 +438,17 @@ private:
     
     [commandBuffer presentDrawable:drawable];
     [commandBuffer commit];
+    
+    if (date) {
+        double frameTimeMs = -1000 * [date timeIntervalSinceNow];
+        double smoothing = 0.9;
+        
+        fps = fps * smoothing + (1000 / frameTimeMs) * (1.0 - smoothing);
+        NSLog(@"fps: %f, frametime: %f", fps, frameTimeMs);
+      
+    }
+    
+    date = [NSDate date];
 }
 
 - (void)mtkView:(nonnull MetalView *)view drawableSizeWillChange:(CGSize)_size
@@ -428,9 +480,9 @@ private:
  
     
     self.mtkView.device = MTLCreateSystemDefaultDevice();
-    self.mtkView.clearColor = MTLClearColorMake(0.0, 0.5, 1.0, 1.0);
+    self.mtkView.clearColor = MTLClearColorMake(0,0,0,0);
     self.mtkView.framebufferOnly = false;
-    
+    // self.mtkView.preferredFramesPerSecond = 30;
    
     renderer = [[AAPLRenderer alloc] initWithMetalKitView:self.mtkView];
     
@@ -453,15 +505,15 @@ private:
     
     CefWindowInfo window_info;
     
-    window_info.SetAsWindowless(nil/*void *parent*/);
+    window_info.SetAsWindowless([self.view.window windowRef]);
     
     CefBrowserSettings settings;
-    settings.windowless_frame_rate = 60;
+   // settings.windowless_frame_rate = 300;
    
     const char kStartupURL[] =
         "http://localhost:9081/p/jnqrc6gaxhjc";
         //"https://codepen.io/jakeporritt88/pen/yJQpzv";
-        //"https://jsfiddle.net/solodev/8mjwemvd/";
+        //"https://jsfiddle.net/yLtdp6c3/";
         
     
     CefBrowserHost::CreateBrowser(
