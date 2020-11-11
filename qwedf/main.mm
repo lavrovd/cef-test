@@ -56,15 +56,23 @@ int main(int argc, const char * argv[]) {
         AppDelegate* delegate = [AppDelegate new];
         [NSApp setDelegate:delegate];
         
-        CefMainArgs main_args;
+        CefMainArgs main_args(4, new char*[]{
+            "xxx",
+            "--show-fps-counter",
+            "--disable-gpu-vsync",
+            //"--disable-frame-rate-limit",
+            "--use-mock-keychain"
+        });
+      
+       
         CefRefPtr<BrowserApp> app = new BrowserApp(delegate);
         CefSettings settings;
-        
-        
+        //settings.windowless_rendering_enabled = true;
         CefInitialize(main_args, settings, app, NULL);
         
         CefRunMessageLoop();
         
+        CefShutdown();
         //while (true) {
         //    CefDoMessageLoopWork();
         //}

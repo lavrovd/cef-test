@@ -33,7 +33,7 @@ typedef enum MouseEventKind : NSUInteger {
                rect:(CefRect&)rect;
 
 
-- (void) getScreenInfo:(CefRefPtr<CefBrowser>)browser
+- (void)getScreenInfo:(CefRefPtr<CefBrowser>)browser
            screen_info:(CefScreenInfo&) screen_info;
     
     
@@ -47,6 +47,8 @@ typedef enum MouseEventKind : NSUInteger {
 - (void)setBrowser:(CefRefPtr<CefBrowser>)browser;
 
 - (void)mouseEvent:(MouseEventKind)mouseEventKind at:(NSPoint)point modifiers:(int)modifiers;
+
+
 @end
 
 
@@ -188,7 +190,18 @@ public:
                          int width,
                          int height) override
     {
+            
         [renderer onBrowserPaint:browser type: type dirtyRects: dirtyRects buffer: buffer width: width height: height];
+    
+    }
+    
+    
+    virtual void OnAcceleratedPaint(CefRefPtr<CefBrowser> browser,
+                                    PaintElementType type,
+                                    const RectList& dirtyRects,
+                                    void* shared_handle) override
+    {
+        NSLog(@"XXX");
     }
     
     ///
@@ -204,11 +217,13 @@ private:
 @implementation AAPLRenderer
 {
     int i;
+    MTKView * mtkView;
     id<MTLDevice> device;
     id<MTLCommandQueue> commandQueue;
     id<MTLTexture> texture;
     id<MTLComputePipelineState> computePipelineState;
     
+    CGSize size;
     CefRefPtr<CefBrowser> browser;
 }
 
@@ -218,13 +233,11 @@ private:
         return;
     }
   
-    //NSPoint local_point = [self convertPoint:event_location fromView:nil];
-    
     CefMouseEvent mouseEvent;
     mouseEvent.x = point.x;
     mouseEvent.y = point.y;
     mouseEvent.modifiers = modifiers;
-    NSLog(@"mouseEvent %d %d", mouseEvent.x, mouseEvent.y);
+    // NSLog(@"mouseEvent %d %d", mouseEvent.x, mouseEvent.y);
     
     switch(mouseEventKind){
         case MouseEventKind::kDown:
@@ -243,7 +256,6 @@ private:
                         1);
             break;
         case MouseEventKind::kMove:
-           // browser->GetHost()->SendMou
             browser->GetHost()->SendMouseMoveEvent(mouseEvent, false);
             break;
     }
@@ -251,24 +263,15 @@ private:
    
 }
 
-- (nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)mtkView
+- (nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)_mtkView
 {
     self = [super init];
     if (self)
     {
+        mtkView = _mtkView;
         device = mtkView.device;
         commandQueue = [device newCommandQueue];
-//
-//        MTKTextureLoader *loader = [[MTKTextureLoader alloc] initWithDevice: device];
-//        NSURL *url = [[NSBundle mainBundle] URLForResource:@"codinghorror" withExtension:@"png"];
-//        texture = [loader newTextureWithContentsOfURL:url options:nil error:nil];
-//
-        
-        MTLTextureDescriptor *textureDescriptor = [[MTLTextureDescriptor alloc] init];
-        textureDescriptor.pixelFormat = MTLPixelFormatBGRA8Unorm;
-        textureDescriptor.width = mtkView.drawableSize.width;
-        textureDescriptor.height = mtkView.drawableSize.height;
-        texture = [device newTextureWithDescriptor:textureDescriptor];
+
         
         id<MTLLibrary> library = [device newDefaultLibrary];
         id<MTLFunction> computeShader = [library newFunctionWithName: @"compute_shader"];
@@ -281,18 +284,26 @@ private:
 - (void)setBrowser:(CefRefPtr<CefBrowser>)_browser
 {
     browser = _browser;
+   
 }
 
 - (void)getViewRect:(CefRefPtr<CefBrowser>)browser rect:(CefRect&)rect
 {
-    rect.Set(0,0, (int)texture.width / 2, (int)texture.height / 2);
+    if (size.width > 0) {
+        float deviceScaleFactor = [self getDeviceScaleFactor];
+        rect.Set(0,0, (int)size.width / deviceScaleFactor, (int)size.height / deviceScaleFactor);
+    }
 }
 
+- (float)getDeviceScaleFactor {
+    return [[NSScreen mainScreen] backingScaleFactor];
+}
 
 - (void) getScreenInfo:(CefRefPtr<CefBrowser>)browser
            screen_info:(CefScreenInfo&) screen_info
 {
-    screen_info.device_scale_factor = 2;
+    screen_info.device_scale_factor = [self getDeviceScaleFactor];
+
 }
 
 - (void)onBrowserPaint:(CefRefPtr<CefBrowser>)browser
@@ -304,28 +315,40 @@ private:
 {
    
     CefRenderHandler::RectList::const_iterator i = dirtyRects.begin();
-    for (; i != dirtyRects.end(); ++i) {
-        const CefRect& rect = *i;
+    
+    if(!texture || texture.width < width || texture.height < height){
         
-        int x = rect.x;
-        int y = rect.y;
-        int w = rect.width;
-        int h = rect.height;
+        MTLTextureDescriptor *textureDescriptor = [[MTLTextureDescriptor alloc] init];
+        textureDescriptor.pixelFormat = MTLPixelFormatBGRA8Unorm;
+        textureDescriptor.width = width;
+        textureDescriptor.height = height;
+        texture = [device newTextureWithDescriptor:textureDescriptor];
+        int x = 0;
+        int y = 0;
+        int w = width;
+        int h = height;
         MTLRegion region = MTLRegionMake2D(x, y, w, h);
         [texture replaceRegion:region mipmapLevel:0 withBytes:(char*)buffer + (y * width + x) * 4 bytesPerRow:4 * width];
-       
+    } else {
+        for (; i != dirtyRects.end(); ++i) {
+            const CefRect& rect = *i;
+            
+            int x = rect.x;
+            int y = rect.y;
+            int w = rect.width;
+            int h = rect.height;
+            MTLRegion region = MTLRegionMake2D(x, y, w, h);
+            
+            
+            [texture replaceRegion:region mipmapLevel:0 withBytes:(char*)buffer + (y * width + x) * 4 bytesPerRow:4 * width];
+           
+        }
     }
     
 }
 
 - (void)drawInMTKView:(nonnull MTKView *)view
 {
-    
-//    uint64_t tid;
-//    pthread_threadid_np(NULL, &tid);
-//    NSLog(@"draw : %lld\n", tid);
-    
-    
     // The render pass descriptor references the texture into which Metal should draw
     MTLRenderPassDescriptor *renderPassDescriptor = view.currentRenderPassDescriptor;
     if (renderPassDescriptor == nil)
@@ -348,7 +371,7 @@ private:
     {
         id<MTLTexture> drawingTexture = [drawable texture];
         
-        if (drawingTexture != nil)
+        if (drawingTexture != nil && texture != nil)
         {
            
             id<MTLComputeCommandEncoder> encoder = [commandBuffer computeCommandEncoder];
@@ -357,6 +380,7 @@ private:
                 [encoder setComputePipelineState:computePipelineState];
                 [encoder setTexture:texture atIndex:0];
                 [encoder setTexture:drawingTexture atIndex:1];
+                [encoder setTexture:drawingTexture atIndex:2];
                 
                 MTLSize threadGroupCount = MTLSizeMake(16, 16, 1);
                 MTLSize threadGroups = MTLSizeMake(
@@ -375,9 +399,12 @@ private:
     [commandBuffer commit];
 }
 
-- (void)mtkView:(nonnull MTKView *)view drawableSizeWillChange:(CGSize)size
+- (void)mtkView:(nonnull MetalView *)view drawableSizeWillChange:(CGSize)_size
 {
-    
+    size = _size;
+    if (browser) {
+        browser->GetHost()->WasResized();
+    }
 }
 
 @end
@@ -398,21 +425,20 @@ private:
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+ 
     
     self.mtkView.device = MTLCreateSystemDefaultDevice();
     self.mtkView.clearColor = MTLClearColorMake(0.0, 0.5, 1.0, 1.0);
     self.mtkView.framebufferOnly = false;
-  
-  
+    
+   
     renderer = [[AAPLRenderer alloc] initWithMetalKitView:self.mtkView];
     
     [self.mtkView setRenderer: renderer];
     
     simpleHandler = new SimpleHandler(renderer);
     
-    if(!renderer) {
+    if (!renderer) {
         NSLog(@"Renderer initialization failed");
         return;
     }
@@ -428,32 +454,25 @@ private:
     CefWindowInfo window_info;
     
     window_info.SetAsWindowless(nil/*void *parent*/);
+    
+    CefBrowserSettings settings;
+    settings.windowless_frame_rate = 60;
    
-    CefBrowserSettings cefBrowserSettings;
-    cefBrowserSettings.windowless_frame_rate = 60;
     const char kStartupURL[] =
         "http://localhost:9081/p/jnqrc6gaxhjc";
         //"https://codepen.io/jakeporritt88/pen/yJQpzv";
-        //https://jsfiddle.net/solodev/8mjwemvd/";
+        //"https://jsfiddle.net/solodev/8mjwemvd/";
         
     
     CefBrowserHost::CreateBrowser(
                                   window_info,
                                   simpleHandler,
                                   kStartupURL,
-                                  cefBrowserSettings,
+                                  settings,
                                   nullptr,
                                   nullptr);
     
  
 }
-
-
-- (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
-
-    // Update the view, if already loaded.
-}
-
 
 @end

@@ -36,7 +36,6 @@
 		E485716D2559789800E02BBF /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E485716B2559789800E02BBF /* MetalKit.framework */; };
 		E485716E2559789800E02BBF /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E485716C2559789800E02BBF /* Metal.framework */; };
 		E4857170255978A000E02BBF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E485716F255978A000E02BBF /* QuartzCore.framework */; };
-		E4CBAD43255A80CB005220CE /* codinghorror.png in Resources */ = {isa = PBXBuildFile; fileRef = E4CBAD2F255A80CB005220CE /* codinghorror.png */; };
 		E4CBAD49255A810D005220CE /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = E4CBAD48255A810D005220CE /* Shaders.metal */; };
 		E4CBAD4F255AC8E0005220CE /* Chromium Embedded Framework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E4CBAD4E255AC8E0005220CE /* Chromium Embedded Framework.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E4CBAD5C255AC9A2005220CE /* libcef_dll_wrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4856EE1255704F300E02BBF /* libcef_dll_wrapper.a */; };
@@ -234,7 +233,6 @@
 		E485716B2559789800E02BBF /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		E485716C2559789800E02BBF /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		E485716F255978A000E02BBF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		E4CBAD2F255A80CB005220CE /* codinghorror.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = codinghorror.png; sourceTree = "<group>"; };
 		E4CBAD48255A810D005220CE /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		E4CBAD4E255AC8E0005220CE /* Chromium Embedded Framework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Chromium Embedded Framework.framework"; path = "qwedf/cef/Release/Chromium Embedded Framework.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -322,7 +320,6 @@
 		E4856B9025552D6800E02BBF /* qwedf */ = {
 			isa = PBXGroup;
 			children = (
-				E4CBAD2F255A80CB005220CE /* codinghorror.png */,
 				E4856B9125552D6800E02BBF /* AppDelegate.h */,
 				E48571342559551100E02BBF /* AppDelegate.mm */,
 				E4856B9425552D6800E02BBF /* ViewController.h */,
@@ -666,7 +663,6 @@
 			files = (
 				E4856B9825552D6800E02BBF /* Assets.xcassets in Resources */,
 				E4856B9B25552D6800E02BBF /* Main.storyboard in Resources */,
-				E4CBAD43255A80CB005220CE /* codinghorror.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
