@@ -1,24 +1,14 @@
-//
-//  ViewController.m
-//  qwedf
-//
-//  Created by Dávid Németh Cs. on 2020. 11. 06..
-//
-
-#import "ViewController.h"
-#import "AppDelegate.h"
-#include "include/cef_app.h"
-#include "include/cef_browser.h"
-#include "include/cef_client.h"
-#include "include/wrapper/cef_library_loader.h"
-#include "AppDelegate.h"
-
+#import "include/cef_app.h"
+#import "include/cef_browser.h"
+#import "include/cef_client.h"
+#import "include/wrapper/cef_library_loader.h"
 #import <Metal/Metal.h>
 #import <MetalKit/MetalKit.h>
 #import <Cocoa/Cocoa.h>
 #import <QuartzCore/CAMetalLayer.h>
 #import <simd/simd.h>
 #import <mach/mach.h>
+#import "ViewController.h"
 
 struct ShaderParameters {
     simd::float2 mouse;
@@ -34,12 +24,12 @@ typedef enum MouseEventKind : NSUInteger {
 @interface AAPLRenderer : NSObject<MTKViewDelegate>
 - (nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)mtkView;
 
-- (void)getViewRect:(CefRefPtr<CefBrowser>)browser
+- (void)getViewRect:(CefRefPtr<CefBrowser>)getViewRect
                rect:(CefRect&)rect;
 
 
 - (void)getScreenInfo:(CefRefPtr<CefBrowser>)browser
-           screen_info:(CefScreenInfo&) screen_info;
+          screen_info:(CefScreenInfo&)screen_info;
     
     
 - (void)onBrowserPaint:(CefRefPtr<CefBrowser>)browser
@@ -51,13 +41,15 @@ typedef enum MouseEventKind : NSUInteger {
 
 - (void)setBrowser:(CefRefPtr<CefBrowser>)browser;
 
-- (void)mouseEvent:(MouseEventKind)mouseEventKind at:(NSPoint)point modifiers:(int)modifiers;
+- (void)mouseEvent:(MouseEventKind)mouseEventKind
+                at:(NSPoint)point
+         modifiers:(int)modifiers;
 
 
 @end
 
 
-@interface MetalView : MTKView<NSWindowDelegate>{
+@interface MetalView : MTKView<NSWindowDelegate> {
     AAPLRenderer* renderer;
 }
 - (void)setRenderer:(AAPLRenderer*)renderer;
@@ -66,53 +58,54 @@ typedef enum MouseEventKind : NSUInteger {
 @implementation MetalView
 
 - (int)getModifiersForEvent:(NSEvent*)event {
-  int modifiers = 0;
-
-  if ([event modifierFlags] & NSControlKeyMask)
-    modifiers |= EVENTFLAG_CONTROL_DOWN;
-  if ([event modifierFlags] & NSShiftKeyMask)
-    modifiers |= EVENTFLAG_SHIFT_DOWN;
-  if ([event modifierFlags] & NSAlternateKeyMask)
-    modifiers |= EVENTFLAG_ALT_DOWN;
-  if ([event modifierFlags] & NSCommandKeyMask)
-    modifiers |= EVENTFLAG_COMMAND_DOWN;
-  if ([event modifierFlags] & NSAlphaShiftKeyMask)
-    modifiers |= EVENTFLAG_CAPS_LOCK_ON;
-
-//  if ([event type] == NSKeyUp || [event type] == NSKeyDown ||
-//      [event type] == NSFlagsChanged) {
-//    // Only perform this check for key events
-//    if ([self isKeyPadEvent:event])
-//      modifiers |= EVENTFLAG_IS_KEY_PAD;
-//  }
-
-  // OS X does not have a modifier for NumLock, so I'm not entirely sure how to
-  // set EVENTFLAG_NUM_LOCK_ON;
-  //
-  // There is no EVENTFLAG for the function key either.
-
-  // Mouse buttons
-  switch ([event type]) {
-    case NSLeftMouseDragged:
-    case NSLeftMouseDown:
-    case NSLeftMouseUp:
-      modifiers |= EVENTFLAG_LEFT_MOUSE_BUTTON;
-      break;
-    case NSRightMouseDragged:
-    case NSRightMouseDown:
-    case NSRightMouseUp:
-      modifiers |= EVENTFLAG_RIGHT_MOUSE_BUTTON;
-      break;
-    case NSOtherMouseDragged:
-    case NSOtherMouseDown:
-    case NSOtherMouseUp:
-      modifiers |= EVENTFLAG_MIDDLE_MOUSE_BUTTON;
-      break;
-    default:
-      break;
-  }
-
-  return modifiers;
+    int modifiers = 0;
+    
+    if ([event modifierFlags] & NSEventModifierFlagControl)
+        modifiers |= EVENTFLAG_CONTROL_DOWN;
+    if ([event modifierFlags] & NSEventModifierFlagShift)
+        modifiers |= EVENTFLAG_SHIFT_DOWN;
+    if ([event modifierFlags] & NSEventModifierFlagOption)
+        modifiers |= EVENTFLAG_ALT_DOWN;
+    if ([event modifierFlags] & NSEventModifierFlagCommand)
+        modifiers |= EVENTFLAG_COMMAND_DOWN;
+    if ([event modifierFlags] & NSEventModifierFlagCapsLock)
+        modifiers |= EVENTFLAG_CAPS_LOCK_ON;
+    
+    //  if ([event type] == NSEventTypeKeyUp ||
+    //      [event type] == NSEventTypeKeyDown ||
+    //      [event type] == NSEventTypeFlagsChanged
+    //  ) {
+    //    // Only perform this check for key events
+    //    if ([self isKeyPadEvent:event])
+    //      modifiers |= EVENTFLAG_IS_KEY_PAD;
+    //  }
+    
+    // OS X does not have a modifier for NumLock, so I'm not entirely sure how to
+    // set EVENTFLAG_NUM_LOCK_ON;
+    //
+    // There is no EVENTFLAG for the function key either.
+   
+    switch ([event type]) {
+        case NSEventTypeLeftMouseDragged:
+        case NSEventTypeLeftMouseUp:
+        case NSEventTypeLeftMouseDown:
+            modifiers |= EVENTFLAG_LEFT_MOUSE_BUTTON;
+            break;
+        case NSEventTypeRightMouseDragged:
+        case NSEventTypeRightMouseUp:
+        case NSEventTypeRightMouseDown:
+            modifiers |= EVENTFLAG_RIGHT_MOUSE_BUTTON;
+            break;
+        case NSEventTypeOtherMouseDragged:
+        case NSEventTypeOtherMouseUp:
+        case NSEventTypeOtherMouseDown:
+            modifiers |= EVENTFLAG_MIDDLE_MOUSE_BUTTON;
+            break;
+        default:
+            break;
+    }
+    
+    return modifiers;
 }
 
 
@@ -291,10 +284,10 @@ private:
 - (void)setBrowser:(CefRefPtr<CefBrowser>)_browser
 {
     browser = _browser;
-   
 }
 
-- (void)getViewRect:(CefRefPtr<CefBrowser>)browser rect:(CefRect&)rect
+- (void)getViewRect:(CefRefPtr<CefBrowser>)browser
+               rect:(CefRect&)rect
 {
     if (size.width > 0) {
         float deviceScaleFactor = [self getDeviceScaleFactor];
@@ -344,6 +337,7 @@ private:
             int y = rect.y;
             int w = rect.width;
             int h = rect.height;
+            NSLog(@"dirty x: %d, y: %d, w: %d, h: %d", x, y, w, h);
             MTLRegion region = MTLRegionMake2D(x, y, w, h);
             
             [texture
@@ -444,7 +438,7 @@ private:
         double smoothing = 0.9;
         
         fps = fps * smoothing + (1000 / frameTimeMs) * (1.0 - smoothing);
-        NSLog(@"fps: %f, frametime: %f", fps, frameTimeMs);
+       // NSLog(@"fps: %f, frametime: %f", fps, frameTimeMs);
       
     }
     
@@ -478,12 +472,12 @@ private:
 - (void)viewDidLoad {
     [super viewDidLoad];
  
-    
     self.mtkView.device = MTLCreateSystemDefaultDevice();
     self.mtkView.clearColor = MTLClearColorMake(0,0,0,0);
     self.mtkView.framebufferOnly = false;
     // self.mtkView.preferredFramesPerSecond = 30;
    
+    
     renderer = [[AAPLRenderer alloc] initWithMetalKitView:self.mtkView];
     
     [self.mtkView setRenderer: renderer];
@@ -506,14 +500,13 @@ private:
     CefWindowInfo window_info;
     
     window_info.SetAsWindowless([self.view.window windowRef]);
-    
     CefBrowserSettings settings;
-   // settings.windowless_frame_rate = 300;
    
     const char kStartupURL[] =
-        "http://localhost:9081/p/jnqrc6gaxhjc";
+        //"https://google.com";
+        //"http://localhost:9081/p/jnqrc6gaxhjc";
         //"https://codepen.io/jakeporritt88/pen/yJQpzv";
-        //"https://jsfiddle.net/yLtdp6c3/";
+        "https://jsfiddle.net/yLtdp6c3/";
         
     
     CefBrowserHost::CreateBrowser(
@@ -523,8 +516,6 @@ private:
                                   settings,
                                   nullptr,
                                   nullptr);
-    
- 
 }
 
 @end

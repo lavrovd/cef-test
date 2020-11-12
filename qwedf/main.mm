@@ -1,86 +1,82 @@
-//
-//  main.m
-//  qwedf
-//
-//  Created by Dávid Németh Cs. on 2020. 11. 06..
-//
-
 #import <Cocoa/Cocoa.h>
-#include "include/cef_app.h"
-#include "include/cef_browser.h"
-#include "include/cef_client.h"
-#include "include/wrapper/cef_library_loader.h"
-#include "AppDelegate.h"
+#import "include/cef_app.h"
+#import "include/cef_browser.h"
+#import "include/cef_client.h"
+#import "include/wrapper/cef_library_loader.h"
+#import "AppDelegate.h"
 
-
-
-
-class BrowserApp : public CefApp, public CefBrowserProcessHandler {
- public:
-  BrowserApp(AppDelegate *appDelegate) {
-      this->appDelegate = appDelegate;
-  }
-
-  // CefApp methods:
-  CefRefPtr<CefBrowserProcessHandler> GetBrowserProcessHandler() OVERRIDE {
-    return this;
-  }
-
-  // CefBrowserProcessHandler methods:
-  void OnContextInitialized() OVERRIDE {
-      [this->appDelegate OnContextInitialized];
-
-  }
-
- private:
-    AppDelegate *appDelegate;
+class CefBrowserApp : public CefApp, public CefBrowserProcessHandler {
+public:
+    CefBrowserApp(std::function<void()> onContextinitialized)
+        : onContextinitialized(onContextinitialized)
+    {
+       
+    }
     
-  IMPLEMENT_REFCOUNTING(BrowserApp);
-  DISALLOW_COPY_AND_ASSIGN(BrowserApp);
+    CefRefPtr<CefBrowserProcessHandler> GetBrowserProcessHandler() override {
+        return this;
+    }
+    
+    void OnBeforeCommandLineProcessing(
+         const CefString& process_type,
+         CefRefPtr<CefCommandLine> command_line
+    ) override {
+        
+        if (process_type.empty()) {
+            
+            command_line->AppendSwitch("use-mock-keychain");
+//            command_line->AppendSwitch("show-fps-counter");
+//            command_line->AppendSwitch("disable-gpu");
+//            command_line->AppendSwitch("disable-gpu-vsync");
+//            command_line->AppendSwitch("disable-frame-rate-limit");
+//            command_line->AppendSwitch("disable-gpu-compositing");
+//            // Don't create a "GPUCache" directory when cache-path is unspecified.
+//            command_line->AppendSwitch("disable-gpu-shader-disk-cache");
+         
+        }
+    }
+    
+    void OnContextInitialized() override {
+        this->onContextinitialized();
+    }
+    
+private:
+    std::function<void()> onContextinitialized;
+    
+    IMPLEMENT_REFCOUNTING(CefBrowserApp);
+    DISALLOW_COPY_AND_ASSIGN(CefBrowserApp);
 };
 
-
-
 int main(int argc, const char * argv[]) {
+    
     // Load the CEF framework library at runtime instead of linking directly
     // as required by the macOS sandbox implementation.
     CefScopedLibraryLoader library_loader;
-    if (!library_loader.LoadInMain())
-      return 1;
+    if (!library_loader.LoadInMain()) {
+        return 1;
+    }
     
     @autoreleasepool {
         
         [NSApplication sharedApplication];
         
-     
-        AppDelegate* delegate = [AppDelegate new];
-        [NSApp setDelegate:delegate];
+        AppDelegate* appDelegate = [AppDelegate new];
+        [NSApp setDelegate:appDelegate];
         
+        CefMainArgs cefMainArgs;
         
-        CefMainArgs main_args(2, new char*[]{
-            "dummy",
-            "--use-mock-keychain",
-            //"--show-fps-counter",
-            //"--disable-gpu-vsync",
-            //"--disable-frame-rate-limit",
-           
+        CefSettings cefSettings;
+        cefSettings.windowless_rendering_enabled = true;
+        
+        CefRefPtr<CefBrowserApp> cefBrowserApp = new CefBrowserApp([appDelegate](){
+            [appDelegate cefContextInitialized];
         });
       
-       
-        CefRefPtr<BrowserApp> app = new BrowserApp(delegate);
-        CefSettings settings;
-        //settings.windowless_rendering_enabled = true;
-        CefInitialize(main_args, settings, app, NULL);
+        CefInitialize(cefMainArgs, cefSettings, cefBrowserApp, nil);
         
         CefRunMessageLoop();
         
         CefShutdown();
-        //while (true) {
-        //    CefDoMessageLoopWork();
-        //}
-      
     }
- 
-    
-    return 0; //NSApplicationMain(argc, argv);
+   
 }
