@@ -710,7 +710,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1339" height="671"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView identifier="mtkView" fixedFrame="YES" id="3Hz-Nd-SkS" customClass="MetalView">
+                            <customView identifier="mtkView" id="3Hz-Nd-SkS" customClass="MTKView">
                                 <rect key="frame" x="0.0" y="0.0" width="1339" height="671"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </customView>

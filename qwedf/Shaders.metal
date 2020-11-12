@@ -1,11 +1,5 @@
-//
-//  Shaders.metal
-//  qwedf
-//
-//  Created by Dávid Németh Cs. on 2020. 11. 10..
-//
-
 #include <metal_stdlib>
+
 using namespace metal;
 
 struct ShaderParameters {
@@ -22,13 +16,9 @@ kernel void compute_shader(constant ShaderParameters *params [[buffer(0)]],
     float4 color2 = input2.read(gid);
     
     float a1 = color1.a;
-    
-    if (
-        gid[0] >= params->mouse[0] - 50 &&
-        gid[0] < params->mouse[0] + 50 &&
-        gid[1] >= params->mouse[1] - 50 &&
-        gid[1] < params->mouse[1] + 50
-    ) {
+    float dxMouse = gid[0] - params->mouse[0];
+    float dyMouse = gid[1] - params->mouse[1];
+    if (dxMouse * dxMouse + dyMouse * dyMouse < 50 * 50) {
         a1 = 0.5;
     }
         
