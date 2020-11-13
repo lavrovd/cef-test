@@ -129,35 +129,35 @@
 			containerPortal = E418326D255E90B1000B1F04 /* cef.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E90DB3A9C3D344128CCD0D4D;
-			remoteInfo = ceftests;
+			remoteInfo = testapps;
 		};
 		E418329B255E90B2000B1F04 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E418326D255E90B1000B1F04 /* cef.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 06B157C6F95F4DE78DBBA64F;
-			remoteInfo = ceftests_Helper;
+			remoteInfo = testapps_Helper;
 		};
 		E418329D255E90B2000B1F04 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E418326D255E90B1000B1F04 /* cef.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 002327A410C64FC98D1F2D58;
-			remoteInfo = ceftests_Helper_gpu;
+			remoteInfo = testapps_Helper_gpu;
 		};
 		E418329F255E90B2000B1F04 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E418326D255E90B1000B1F04 /* cef.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 772777EB91EE44709004F66F;
-			remoteInfo = ceftests_Helper_plugin;
+			remoteInfo = testapps_Helper_plugin;
 		};
 		E41832A1255E90B2000B1F04 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E418326D255E90B1000B1F04 /* cef.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BAD10C4C2CF545D3B2AB7D65;
-			remoteInfo = ceftests_Helper_renderer;
+			remoteInfo = testapps_Helper_renderer;
 		};
 		E41832A3255E90B2000B1F04 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -171,28 +171,28 @@
 			containerPortal = E4856B8625552D6800E02BBF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E4856F2A2557ECED00E02BBF;
-			remoteInfo = "qwedf Helper";
+			remoteInfo = "testapp Helper";
 		};
 		E4856FF02557F77F00E02BBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E4856B8625552D6800E02BBF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E4856FB32557F4EE00E02BBF;
-			remoteInfo = "qwedf Helper (GPU)";
+			remoteInfo = "testapp Helper (GPU)";
 		};
 		E4856FF22557F77F00E02BBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E4856B8625552D6800E02BBF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E4856FCB2557F69300E02BBF;
-			remoteInfo = "qwedf Helper (Plugin)";
+			remoteInfo = "testapp Helper (Plugin)";
 		};
 		E4856FF42557F77F00E02BBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E4856B8625552D6800E02BBF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E4856FDA2557F6AE00E02BBF;
-			remoteInfo = "qwedf Helper (Renderer)";
+			remoteInfo = "testapp Helper (Renderer)";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -224,16 +224,16 @@
 		E4856B9A25552D6800E02BBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4856B9C25552D6800E02BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4856B9D25552D6800E02BBF /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
-		E4856B9F25552D6800E02BBF /* qwedf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = qwedf.entitlements; sourceTree = "<group>"; };
+		E4856B9F25552D6800E02BBF /* testapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = testapp.entitlements; sourceTree = "<group>"; };
 		E4856EA82557047500E02BBF /* libcef_dll_wrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libcef_dll_wrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4856FBE2557F4EF00E02BBF /* qwedf Helper (GPU)-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "qwedf Helper (GPU)-Info.plist"; path = "/Users/encse/projects/swiftplayground/qwedf/qwedf Helper (GPU)-Info.plist"; sourceTree = "<absolute>"; };
-		E4856FD62557F69300E02BBF /* qwedf Helper (Renderer)-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "qwedf Helper (Renderer)-Info.plist"; path = "/Users/encse/projects/swiftplayground/qwedf/qwedf Helper (Renderer)-Info.plist"; sourceTree = "<absolute>"; };
-		E4856FE52557F6AE00E02BBF /* qwedf Helper (Plugin)-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "qwedf Helper (Plugin)-Info.plist"; path = "/Users/encse/projects/swiftplayground/qwedf/qwedf Helper (Plugin)-Info.plist"; sourceTree = "<absolute>"; };
-		E4856FFC25583BC500E02BBF /* qwedf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qwedf.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4857066255845CD00E02BBF /* qwedf Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "qwedf Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4857067255845DD00E02BBF /* qwedf Helper (GPU).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "qwedf Helper (GPU).app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4857074255845EA00E02BBF /* qwedf Helper (Plugin).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "qwedf Helper (Plugin).app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4857075255845F600E02BBF /* qwedf Helper (Renderer).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "qwedf Helper (Renderer).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4856FBE2557F4EF00E02BBF /* testapp Helper (GPU)-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "testapp Helper (GPU)-Info.plist"; path = "/Users/encse/projects/swiftplayground/testapp/testapp Helper (GPU)-Info.plist"; sourceTree = "<absolute>"; };
+		E4856FD62557F69300E02BBF /* testapp Helper (Renderer)-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "testapp Helper (Renderer)-Info.plist"; path = "/Users/encse/projects/swiftplayground/testapp/testapp Helper (Renderer)-Info.plist"; sourceTree = "<absolute>"; };
+		E4856FE52557F6AE00E02BBF /* testapp Helper (Plugin)-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "testapp Helper (Plugin)-Info.plist"; path = "/Users/encse/projects/swiftplayground/testapp/testapp Helper (Plugin)-Info.plist"; sourceTree = "<absolute>"; };
+		E4856FFC25583BC500E02BBF /* testapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4857066255845CD00E02BBF /* testapp Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "testapp Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4857067255845DD00E02BBF /* testapp Helper (GPU).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "testapp Helper (GPU).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4857074255845EA00E02BBF /* testapp Helper (Plugin).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "testapp Helper (Plugin).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4857075255845F600E02BBF /* testapp Helper (Renderer).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "testapp Helper (Renderer).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E485709225584A6E00E02BBF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E485709425584A7300E02BBF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		E48571342559551100E02BBF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -323,11 +323,11 @@
 				E4183294255E90B2000B1F04 /* cefsimple Helper (GPU) */,
 				E4183296255E90B2000B1F04 /* cefsimple Helper (Plugin) */,
 				E4183298255E90B2000B1F04 /* cefsimple Helper (Renderer) */,
-				E418329A255E90B2000B1F04 /* ceftests */,
-				E418329C255E90B2000B1F04 /* ceftests Helper */,
-				E418329E255E90B2000B1F04 /* ceftests Helper (GPU) */,
-				E41832A0255E90B2000B1F04 /* ceftests Helper (Plugin) */,
-				E41832A2255E90B2000B1F04 /* ceftests Helper (Renderer) */,
+				E418329A255E90B2000B1F04 /* testapps */,
+				E418329C255E90B2000B1F04 /* testapps Helper */,
+				E418329E255E90B2000B1F04 /* testapps Helper (GPU) */,
+				E41832A0255E90B2000B1F04 /* testapps Helper (Plugin) */,
+				E41832A2255E90B2000B1F04 /* testapps Helper (Renderer) */,
 				E41832A4255E90B2000B1F04 /* libcef_dll_wrapper.a */,
 			);
 			name = Products;
@@ -339,14 +339,14 @@
 				E41833E6255EA9C4000B1F04 /* README.md */,
 				E418330E255E927A000B1F04 /* Chromium Embedded Framework.framework */,
 				E418326D255E90B1000B1F04 /* cef.xcodeproj */,
-				E4856B9025552D6800E02BBF /* qwedf */,
-				E4856F2C2557ECED00E02BBF /* qwedf Helper */,
+				E4856B9025552D6800E02BBF /* testapp */,
+				E4856F2C2557ECED00E02BBF /* testapp Helper */,
 				E4856BF92556F46B00E02BBF /* Frameworks */,
 				E48E9B3A255D821000EEA71D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E4856B9025552D6800E02BBF /* qwedf */ = {
+		E4856B9025552D6800E02BBF /* testapp */ = {
 			isa = PBXGroup;
 			children = (
 				E4856B9125552D6800E02BBF /* AppDelegate.h */,
@@ -357,12 +357,12 @@
 				E4856B9925552D6800E02BBF /* Main.storyboard */,
 				E4856B9C25552D6800E02BBF /* Info.plist */,
 				E4856B9D25552D6800E02BBF /* main.mm */,
-				E4856B9F25552D6800E02BBF /* qwedf.entitlements */,
+				E4856B9F25552D6800E02BBF /* testapp.entitlements */,
 				E4CBAD48255A810D005220CE /* Shaders.metal */,
 				E4CBAD94255D6ADC005220CE /* Renderer.h */,
 				E4CBADA8255D6B40005220CE /* Renderer.mm */,
 			);
-			path = qwedf;
+			path = testapp;
 			sourceTree = "<group>";
 		};
 		E4856BF92556F46B00E02BBF /* Frameworks */ = {
@@ -380,26 +380,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E4856F2C2557ECED00E02BBF /* qwedf Helper */ = {
+		E4856F2C2557ECED00E02BBF /* testapp Helper */ = {
 			isa = PBXGroup;
 			children = (
 				E41831FC255E8C3B000B1F04 /* Info.plist */,
 				E41831FD255E8C3B000B1F04 /* process_helper_mac.cc */,
-				E4856FBE2557F4EF00E02BBF /* qwedf Helper (GPU)-Info.plist */,
-				E4856FD62557F69300E02BBF /* qwedf Helper (Renderer)-Info.plist */,
-				E4856FE52557F6AE00E02BBF /* qwedf Helper (Plugin)-Info.plist */,
+				E4856FBE2557F4EF00E02BBF /* testapp Helper (GPU)-Info.plist */,
+				E4856FD62557F69300E02BBF /* testapp Helper (Renderer)-Info.plist */,
+				E4856FE52557F6AE00E02BBF /* testapp Helper (Plugin)-Info.plist */,
 			);
-			path = "qwedf Helper";
+			path = "testapp Helper";
 			sourceTree = "<group>";
 		};
 		E48E9B3A255D821000EEA71D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4856FFC25583BC500E02BBF /* qwedf.app */,
-				E4857066255845CD00E02BBF /* qwedf Helper.app */,
-				E4857067255845DD00E02BBF /* qwedf Helper (GPU).app */,
-				E4857074255845EA00E02BBF /* qwedf Helper (Plugin).app */,
-				E4857075255845F600E02BBF /* qwedf Helper (Renderer).app */,
+				E4856FFC25583BC500E02BBF /* testapp.app */,
+				E4857066255845CD00E02BBF /* testapp Helper.app */,
+				E4857067255845DD00E02BBF /* testapp Helper (GPU).app */,
+				E4857074255845EA00E02BBF /* testapp Helper (Plugin).app */,
+				E4857075255845F600E02BBF /* testapp Helper (Renderer).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -407,9 +407,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4856B8D25552D6800E02BBF /* qwedf */ = {
+		E4856B8D25552D6800E02BBF /* testapp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4856BB825552D6900E02BBF /* Build configuration list for PBXNativeTarget "qwedf" */;
+			buildConfigurationList = E4856BB825552D6900E02BBF /* Build configuration list for PBXNativeTarget "testapp" */;
 			buildPhases = (
 				E4856B8A25552D6800E02BBF /* Sources */,
 				E4856B8B25552D6800E02BBF /* Frameworks */,
@@ -425,14 +425,14 @@
 				E4856FF32557F77F00E02BBF /* PBXTargetDependency */,
 				E4856FF52557F77F00E02BBF /* PBXTargetDependency */,
 			);
-			name = qwedf;
-			productName = qwedf;
-			productReference = E4856FFC25583BC500E02BBF /* qwedf.app */;
+			name = testapp;
+			productName = testapp;
+			productReference = E4856FFC25583BC500E02BBF /* testapp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E4856F2A2557ECED00E02BBF /* qwedf Helper */ = {
+		E4856F2A2557ECED00E02BBF /* testapp Helper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4856F3C2557ECEF00E02BBF /* Build configuration list for PBXNativeTarget "qwedf Helper" */;
+			buildConfigurationList = E4856F3C2557ECEF00E02BBF /* Build configuration list for PBXNativeTarget "testapp Helper" */;
 			buildPhases = (
 				E4856F272557ECED00E02BBF /* Sources */,
 				E4856F282557ECED00E02BBF /* Frameworks */,
@@ -442,14 +442,14 @@
 			);
 			dependencies = (
 			);
-			name = "qwedf Helper";
-			productName = "qwedf Helper";
-			productReference = E4857066255845CD00E02BBF /* qwedf Helper.app */;
+			name = "testapp Helper";
+			productName = "testapp Helper";
+			productReference = E4857066255845CD00E02BBF /* testapp Helper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E4856FB32557F4EE00E02BBF /* qwedf Helper (GPU) */ = {
+		E4856FB32557F4EE00E02BBF /* testapp Helper (GPU) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4856FBA2557F4EE00E02BBF /* Build configuration list for PBXNativeTarget "qwedf Helper (GPU)" */;
+			buildConfigurationList = E4856FBA2557F4EE00E02BBF /* Build configuration list for PBXNativeTarget "testapp Helper (GPU)" */;
 			buildPhases = (
 				E4856FB42557F4EE00E02BBF /* Sources */,
 				E4856FB62557F4EE00E02BBF /* Frameworks */,
@@ -459,14 +459,14 @@
 			);
 			dependencies = (
 			);
-			name = "qwedf Helper (GPU)";
-			productName = "qwedf Helper";
-			productReference = E4857067255845DD00E02BBF /* qwedf Helper (GPU).app */;
+			name = "testapp Helper (GPU)";
+			productName = "testapp Helper";
+			productReference = E4857067255845DD00E02BBF /* testapp Helper (GPU).app */;
 			productType = "com.apple.product-type.application";
 		};
-		E4856FCB2557F69300E02BBF /* qwedf Helper (Plugin) */ = {
+		E4856FCB2557F69300E02BBF /* testapp Helper (Plugin) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4856FD22557F69300E02BBF /* Build configuration list for PBXNativeTarget "qwedf Helper (Plugin)" */;
+			buildConfigurationList = E4856FD22557F69300E02BBF /* Build configuration list for PBXNativeTarget "testapp Helper (Plugin)" */;
 			buildPhases = (
 				E4856FCC2557F69300E02BBF /* Sources */,
 				E4856FCE2557F69300E02BBF /* Frameworks */,
@@ -476,14 +476,14 @@
 			);
 			dependencies = (
 			);
-			name = "qwedf Helper (Plugin)";
-			productName = "qwedf Helper";
-			productReference = E4857074255845EA00E02BBF /* qwedf Helper (Plugin).app */;
+			name = "testapp Helper (Plugin)";
+			productName = "testapp Helper";
+			productReference = E4857074255845EA00E02BBF /* testapp Helper (Plugin).app */;
 			productType = "com.apple.product-type.application";
 		};
-		E4856FDA2557F6AE00E02BBF /* qwedf Helper (Renderer) */ = {
+		E4856FDA2557F6AE00E02BBF /* testapp Helper (Renderer) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4856FE12557F6AE00E02BBF /* Build configuration list for PBXNativeTarget "qwedf Helper (Renderer)" */;
+			buildConfigurationList = E4856FE12557F6AE00E02BBF /* Build configuration list for PBXNativeTarget "testapp Helper (Renderer)" */;
 			buildPhases = (
 				E4856FDB2557F6AE00E02BBF /* Sources */,
 				E4856FDD2557F6AE00E02BBF /* Frameworks */,
@@ -493,9 +493,9 @@
 			);
 			dependencies = (
 			);
-			name = "qwedf Helper (Renderer)";
-			productName = "qwedf Helper";
-			productReference = E4857075255845F600E02BBF /* qwedf Helper (Renderer).app */;
+			name = "testapp Helper (Renderer)";
+			productName = "testapp Helper";
+			productReference = E4857075255845F600E02BBF /* testapp Helper (Renderer).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -514,7 +514,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E4856B8925552D6800E02BBF /* Build configuration list for PBXProject "qwedf" */;
+			buildConfigurationList = E4856B8925552D6800E02BBF /* Build configuration list for PBXProject "testapp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -533,11 +533,11 @@
 			);
 			projectRoot = "";
 			targets = (
-				E4856B8D25552D6800E02BBF /* qwedf */,
-				E4856F2A2557ECED00E02BBF /* qwedf Helper */,
-				E4856FB32557F4EE00E02BBF /* qwedf Helper (GPU) */,
-				E4856FCB2557F69300E02BBF /* qwedf Helper (Plugin) */,
-				E4856FDA2557F6AE00E02BBF /* qwedf Helper (Renderer) */,
+				E4856B8D25552D6800E02BBF /* testapp */,
+				E4856F2A2557ECED00E02BBF /* testapp Helper */,
+				E4856FB32557F4EE00E02BBF /* testapp Helper (GPU) */,
+				E4856FCB2557F69300E02BBF /* testapp Helper (Plugin) */,
+				E4856FDA2557F6AE00E02BBF /* testapp Helper (Renderer) */,
 			);
 		};
 /* End PBXProject section */
@@ -630,43 +630,43 @@
 			remoteRef = E4183297255E90B2000B1F04 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E418329A255E90B2000B1F04 /* ceftests */ = {
+		E418329A255E90B2000B1F04 /* testapps */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			name = ceftests;
-			path = ceftests.app;
+			name = testapps;
+			path = testapps.app;
 			remoteRef = E4183299255E90B2000B1F04 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E418329C255E90B2000B1F04 /* ceftests Helper */ = {
+		E418329C255E90B2000B1F04 /* testapps Helper */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			name = "ceftests Helper";
-			path = "ceftests Helper.app";
+			name = "testapps Helper";
+			path = "testapps Helper.app";
 			remoteRef = E418329B255E90B2000B1F04 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E418329E255E90B2000B1F04 /* ceftests Helper (GPU) */ = {
+		E418329E255E90B2000B1F04 /* testapps Helper (GPU) */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			name = "ceftests Helper (GPU)";
-			path = "ceftests Helper (GPU).app";
+			name = "testapps Helper (GPU)";
+			path = "testapps Helper (GPU).app";
 			remoteRef = E418329D255E90B2000B1F04 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E41832A0255E90B2000B1F04 /* ceftests Helper (Plugin) */ = {
+		E41832A0255E90B2000B1F04 /* testapps Helper (Plugin) */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			name = "ceftests Helper (Plugin)";
-			path = "ceftests Helper (Plugin).app";
+			name = "testapps Helper (Plugin)";
+			path = "testapps Helper (Plugin).app";
 			remoteRef = E418329F255E90B2000B1F04 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E41832A2255E90B2000B1F04 /* ceftests Helper (Renderer) */ = {
+		E41832A2255E90B2000B1F04 /* testapps Helper (Renderer) */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			name = "ceftests Helper (Renderer)";
-			path = "ceftests Helper (Renderer).app";
+			name = "testapps Helper (Renderer)";
+			path = "testapps Helper (Renderer).app";
 			remoteRef = E41832A1255E90B2000B1F04 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -789,22 +789,22 @@
 /* Begin PBXTargetDependency section */
 		E4856FEF2557F77F00E02BBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E4856F2A2557ECED00E02BBF /* qwedf Helper */;
+			target = E4856F2A2557ECED00E02BBF /* testapp Helper */;
 			targetProxy = E4856FEE2557F77F00E02BBF /* PBXContainerItemProxy */;
 		};
 		E4856FF12557F77F00E02BBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E4856FB32557F4EE00E02BBF /* qwedf Helper (GPU) */;
+			target = E4856FB32557F4EE00E02BBF /* testapp Helper (GPU) */;
 			targetProxy = E4856FF02557F77F00E02BBF /* PBXContainerItemProxy */;
 		};
 		E4856FF32557F77F00E02BBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E4856FCB2557F69300E02BBF /* qwedf Helper (Plugin) */;
+			target = E4856FCB2557F69300E02BBF /* testapp Helper (Plugin) */;
 			targetProxy = E4856FF22557F77F00E02BBF /* PBXContainerItemProxy */;
 		};
 		E4856FF52557F77F00E02BBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E4856FDA2557F6AE00E02BBF /* qwedf Helper (Renderer) */;
+			target = E4856FDA2557F6AE00E02BBF /* testapp Helper (Renderer) */;
 			targetProxy = E4856FF42557F77F00E02BBF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -948,13 +948,13 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = qwedf/Info.plist;
+				INFOPLIST_FILE = testapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				OTHER_CODE_SIGN_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedf;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -972,13 +972,13 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = qwedf/Info.plist;
+				INFOPLIST_FILE = testapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				OTHER_CODE_SIGN_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedf;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -995,7 +995,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
-				INFOPLIST_FILE = "qwedf Helper/Info.plist";
+				INFOPLIST_FILE = "testapp Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1004,7 +1004,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/cef/Release",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedf.helper;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.testapp.helper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -1021,7 +1021,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
-				INFOPLIST_FILE = "qwedf Helper/Info.plist";
+				INFOPLIST_FILE = "testapp Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1030,7 +1030,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/cef/Debug",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedf.helper;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.testapp.helper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -1047,7 +1047,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
-				INFOPLIST_FILE = "qwedf Helper (GPU)-Info.plist";
+				INFOPLIST_FILE = "testapp Helper (GPU)-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1056,7 +1056,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/cef/Release",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedf.helper.gpu;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.testapp.helper.gpu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -1073,7 +1073,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
-				INFOPLIST_FILE = "qwedf Helper (GPU)-Info.plist";
+				INFOPLIST_FILE = "testapp Helper (GPU)-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1082,7 +1082,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/cef/Debug",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedf.helper.gpu;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.testapp.helper.gpu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -1099,7 +1099,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
-				INFOPLIST_FILE = "qwedf Helper (Plugin)-Info.plist";
+				INFOPLIST_FILE = "testapp Helper (Plugin)-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1108,7 +1108,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/cef/Release",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedf.helper.plugin;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.testapp.helper.plugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -1125,7 +1125,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
-				INFOPLIST_FILE = "qwedf Helper (Plugin)-Info.plist";
+				INFOPLIST_FILE = "testapp Helper (Plugin)-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1134,7 +1134,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/cef/Debug",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedf.helper.plugin;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.testapp.helper.plugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -1151,7 +1151,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
-				INFOPLIST_FILE = "qwedf Helper (Renderer)-Info.plist";
+				INFOPLIST_FILE = "testapp Helper (Renderer)-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1160,7 +1160,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/cef/Release",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedf.helper.renderer;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.testapp.helper.renderer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -1177,7 +1177,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
-				INFOPLIST_FILE = "qwedf Helper (Renderer)-Info.plist";
+				INFOPLIST_FILE = "testapp Helper (Renderer)-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1186,7 +1186,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/cef/Debug",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.qwedf.helper.renderer;
+				PRODUCT_BUNDLE_IDENTIFIER = hu.csokavar.testapp.helper.renderer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -1195,7 +1195,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4856B8925552D6800E02BBF /* Build configuration list for PBXProject "qwedf" */ = {
+		E4856B8925552D6800E02BBF /* Build configuration list for PBXProject "testapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4856BB625552D6900E02BBF /* Debug */,
@@ -1204,7 +1204,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4856BB825552D6900E02BBF /* Build configuration list for PBXNativeTarget "qwedf" */ = {
+		E4856BB825552D6900E02BBF /* Build configuration list for PBXNativeTarget "testapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4856BB925552D6900E02BBF /* Debug */,
@@ -1213,7 +1213,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4856F3C2557ECEF00E02BBF /* Build configuration list for PBXNativeTarget "qwedf Helper" */ = {
+		E4856F3C2557ECEF00E02BBF /* Build configuration list for PBXNativeTarget "testapp Helper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4856F3D2557ECEF00E02BBF /* Debug */,
@@ -1222,7 +1222,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4856FBA2557F4EE00E02BBF /* Build configuration list for PBXNativeTarget "qwedf Helper (GPU)" */ = {
+		E4856FBA2557F4EE00E02BBF /* Build configuration list for PBXNativeTarget "testapp Helper (GPU)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4856FBB2557F4EE00E02BBF /* Debug */,
@@ -1231,7 +1231,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4856FD22557F69300E02BBF /* Build configuration list for PBXNativeTarget "qwedf Helper (Plugin)" */ = {
+		E4856FD22557F69300E02BBF /* Build configuration list for PBXNativeTarget "testapp Helper (Plugin)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4856FD32557F69300E02BBF /* Debug */,
@@ -1240,7 +1240,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4856FE12557F6AE00E02BBF /* Build configuration list for PBXNativeTarget "qwedf Helper (Renderer)" */ = {
+		E4856FE12557F6AE00E02BBF /* Build configuration list for PBXNativeTarget "testapp Helper (Renderer)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4856FE22557F6AE00E02BBF /* Debug */,

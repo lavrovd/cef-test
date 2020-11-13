@@ -2,5 +2,3 @@ cef
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcworkspace/contents.xcworkspacedata
-*.xcodeproj/xcuserdata
-Chromium Embedded Framework.framework
