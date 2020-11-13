@@ -106,7 +106,7 @@ struct ShaderParameters {
             int y = rect.y;
             int w = rect.width;
             int h = rect.height;
-            NSLog(@"dirty x: %d, y: %d, w: %d, h: %d", x, y, w, h);
+            // NSLog(@"dirty x: %d, y: %d, w: %d, h: %d", x, y, w, h);
             MTLRegion region = MTLRegionMake2D(x, y, w, h);
             
             [texture
