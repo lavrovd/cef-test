@@ -216,6 +216,7 @@
 		E418330E255E927A000B1F04 /* Chromium Embedded Framework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Chromium Embedded Framework.framework"; path = "cef/Release/Chromium Embedded Framework.framework"; sourceTree = "<group>"; };
 		E418331D255E9F58000B1F04 /* cef_sandbox.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = cef_sandbox.a; path = cef/Release/cef_sandbox.a; sourceTree = "<group>"; };
 		E4183370255EA38D000B1F04 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		E41833E6255EA9C4000B1F04 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E4856B9125552D6800E02BBF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E4856B9425552D6800E02BBF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E4856B9525552D6800E02BBF /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
@@ -335,6 +336,7 @@
 		E4856B8525552D6800E02BBF = {
 			isa = PBXGroup;
 			children = (
+				E41833E6255EA9C4000B1F04 /* README.md */,
 				E418330E255E927A000B1F04 /* Chromium Embedded Framework.framework */,
 				E418326D255E90B1000B1F04 /* cef.xcodeproj */,
 				E4856B9025552D6800E02BBF /* qwedf */,
