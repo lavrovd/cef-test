@@ -1,6 +1,6 @@
 # Offscreen rendering with CEF and Metal
 
-This project is a POC to combine CEF offscreen rendering with Metal API on MacOS. It's based on the `cefsimple` test found in the CEF distribution. This can be a base for a CEF based hud on top of a Metalkit layer.
+This project is a POC to combine CEF offscreen rendering with Metal API on MacOS. It's based on the `cefsimple` test found in the CEF distribution. This can be a base for a CEF based HUD on top of a Metalkit layer for e.g. a game.
 
 The app creates a single window with an ever changing background color and a CEF texture on the top of it. Transparent areas of the browser window uncover
 the animated background behind it.
