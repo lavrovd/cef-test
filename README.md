@@ -44,6 +44,6 @@ drwxr-xr-x   7 encse  staff    224 Nov  4 07:35 tests
 
 4. Open `testapp.xcodeproj` in xcode, select the `testapp` target at run the project.
 
-Enjoy your psychedelic space trip.
+Enjoy your psychedelic space trip. (The real thing is much smoother than this gif.)
 
 ![Spaceship](./spaceship.gif "Spaceship")
