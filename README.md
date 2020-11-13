@@ -24,3 +24,7 @@ It was tested to work with `cef_binary_86.0.21+g6a2c8e7+chromium-86.0.4240.183_m
 3. Follow the instructions in `cef/README.txt` and `cef/CMakeLists.txt` to create a `build` folder inside the `cef` directiory with `cef.xcodeproj`
 
 4. Open `testapp.xcodeproj` in xcode, select the `testapp` target at run the project.
+
+Enjoy your psyhedelic spaceship trip.
+
+![Spaceship](./spaceship.gif "Spaceship")
