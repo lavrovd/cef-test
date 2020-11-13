@@ -1,6 +1,12 @@
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Weverything"
 #import "include/cef_app.h"
 #import "include/cef_browser.h"
 #import "include/cef_client.h"
+#pragma clang diagnostic pop
+
+
 #import <Metal/Metal.h>
 #import <MetalKit/MetalKit.h>
 #import <Cocoa/Cocoa.h>

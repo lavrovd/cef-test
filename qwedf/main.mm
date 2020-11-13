@@ -1,8 +1,16 @@
 #import <Cocoa/Cocoa.h>
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Weverything"
 #import "include/cef_app.h"
 #import "include/cef_browser.h"
 #import "include/cef_client.h"
 #import "include/wrapper/cef_library_loader.h"
+#pragma clang diagnostic pop
+
+
+
+
 #import "AppDelegate.h"
 
 class CefBrowserApp : public CefApp, public CefBrowserProcessHandler {

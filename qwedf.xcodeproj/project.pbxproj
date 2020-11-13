@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E41831FE255E8C3B000B1F04 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E41831FC255E8C3B000B1F04 /* Info.plist */; };
+		E41831FF255E8C3B000B1F04 /* process_helper_mac.cc in Sources */ = {isa = PBXBuildFile; fileRef = E41831FD255E8C3B000B1F04 /* process_helper_mac.cc */; };
+		E4183232255E8CB1000B1F04 /* process_helper_mac.cc in Sources */ = {isa = PBXBuildFile; fileRef = E41831FD255E8C3B000B1F04 /* process_helper_mac.cc */; };
+		E4183237255E8CB6000B1F04 /* process_helper_mac.cc in Sources */ = {isa = PBXBuildFile; fileRef = E41831FD255E8C3B000B1F04 /* process_helper_mac.cc */; };
+		E418323C255E8CBD000B1F04 /* process_helper_mac.cc in Sources */ = {isa = PBXBuildFile; fileRef = E41831FD255E8C3B000B1F04 /* process_helper_mac.cc */; };
 		E4856B9625552D6800E02BBF /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4856B9525552D6800E02BBF /* ViewController.mm */; };
 		E4856B9825552D6800E02BBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4856B9725552D6800E02BBF /* Assets.xcassets */; };
 		E4856B9B25552D6800E02BBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4856B9925552D6800E02BBF /* Main.storyboard */; };
 		E4856B9E25552D6800E02BBF /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4856B9D25552D6800E02BBF /* main.mm */; };
 		E4856F502557F0A200E02BBF /* libcef_dll_wrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4856EE1255704F300E02BBF /* libcef_dll_wrapper.a */; };
-		E4856F9C2557F34400E02BBF /* process_helper_mac.cc in Sources */ = {isa = PBXBuildFile; fileRef = E4856F9A2557F34400E02BBF /* process_helper_mac.cc */; };
-		E4856FB52557F4EE00E02BBF /* process_helper_mac.cc in Sources */ = {isa = PBXBuildFile; fileRef = E4856F9A2557F34400E02BBF /* process_helper_mac.cc */; };
 		E4856FB72557F4EE00E02BBF /* libcef_dll_wrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4856EE1255704F300E02BBF /* libcef_dll_wrapper.a */; };
-		E4856FCD2557F69300E02BBF /* process_helper_mac.cc in Sources */ = {isa = PBXBuildFile; fileRef = E4856F9A2557F34400E02BBF /* process_helper_mac.cc */; };
 		E4856FCF2557F69300E02BBF /* libcef_dll_wrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4856EE1255704F300E02BBF /* libcef_dll_wrapper.a */; };
-		E4856FDC2557F6AE00E02BBF /* process_helper_mac.cc in Sources */ = {isa = PBXBuildFile; fileRef = E4856F9A2557F34400E02BBF /* process_helper_mac.cc */; };
 		E4856FDE2557F6AE00E02BBF /* libcef_dll_wrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4856EE1255704F300E02BBF /* libcef_dll_wrapper.a */; };
 		E485709325584A6E00E02BBF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E485709225584A6E00E02BBF /* Cocoa.framework */; };
 		E485709525584A7300E02BBF /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E485709425584A7300E02BBF /* AppKit.framework */; };
@@ -206,6 +207,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E41831FC255E8C3B000B1F04 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E41831FD255E8C3B000B1F04 /* process_helper_mac.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = process_helper_mac.cc; sourceTree = "<group>"; };
 		E4856B9125552D6800E02BBF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E4856B9425552D6800E02BBF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E4856B9525552D6800E02BBF /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
@@ -216,8 +219,6 @@
 		E4856B9F25552D6800E02BBF /* qwedf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = qwedf.entitlements; sourceTree = "<group>"; };
 		E4856EA82557047500E02BBF /* libcef_dll_wrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libcef_dll_wrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4856EAA255704F300E02BBF /* cef.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cef.xcodeproj; path = qwedf.xcodeproj/../qwedf/cef/build/cef.xcodeproj; sourceTree = "<group>"; };
-		E4856F9A2557F34400E02BBF /* process_helper_mac.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = process_helper_mac.cc; path = helper/process_helper_mac.cc; sourceTree = SOURCE_ROOT; };
-		E4856F9B2557F34400E02BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = helper/Info.plist; sourceTree = SOURCE_ROOT; };
 		E4856FBE2557F4EF00E02BBF /* qwedf Helper (GPU)-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "qwedf Helper (GPU)-Info.plist"; path = "/Users/encse/projects/swiftplayground/qwedf/qwedf Helper (GPU)-Info.plist"; sourceTree = "<absolute>"; };
 		E4856FD62557F69300E02BBF /* qwedf Helper (Renderer)-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "qwedf Helper (Renderer)-Info.plist"; path = "/Users/encse/projects/swiftplayground/qwedf/qwedf Helper (Renderer)-Info.plist"; sourceTree = "<absolute>"; };
 		E4856FE52557F6AE00E02BBF /* qwedf Helper (Plugin)-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "qwedf Helper (Plugin)-Info.plist"; path = "/Users/encse/projects/swiftplayground/qwedf/qwedf Helper (Plugin)-Info.plist"; sourceTree = "<absolute>"; };
@@ -371,11 +372,11 @@
 		E4856F2C2557ECED00E02BBF /* qwedf Helper */ = {
 			isa = PBXGroup;
 			children = (
-				E4856F9B2557F34400E02BBF /* Info.plist */,
+				E41831FC255E8C3B000B1F04 /* Info.plist */,
+				E41831FD255E8C3B000B1F04 /* process_helper_mac.cc */,
 				E4856FBE2557F4EF00E02BBF /* qwedf Helper (GPU)-Info.plist */,
 				E4856FD62557F69300E02BBF /* qwedf Helper (Renderer)-Info.plist */,
 				E4856FE52557F6AE00E02BBF /* qwedf Helper (Plugin)-Info.plist */,
-				E4856F9A2557F34400E02BBF /* process_helper_mac.cc */,
 			);
 			path = "qwedf Helper";
 			sourceTree = "<group>";
@@ -681,6 +682,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41831FE255E8C3B000B1F04 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,7 +746,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4856F9C2557F34400E02BBF /* process_helper_mac.cc in Sources */,
+				E41831FF255E8C3B000B1F04 /* process_helper_mac.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,7 +754,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4856FB52557F4EE00E02BBF /* process_helper_mac.cc in Sources */,
+				E4183232255E8CB1000B1F04 /* process_helper_mac.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,7 +762,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4856FCD2557F69300E02BBF /* process_helper_mac.cc in Sources */,
+				E4183237255E8CB6000B1F04 /* process_helper_mac.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,7 +770,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4856FDC2557F6AE00E02BBF /* process_helper_mac.cc in Sources */,
+				E418323C255E8CBD000B1F04 /* process_helper_mac.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
