@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3209EBB62CFE3BD30069FAA7 /* libsandbox.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3209EBB52CFE3BD30069FAA7 /* libsandbox.tbd */; };
+		3209EBB72CFE3BDF0069FAA7 /* libsandbox.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3209EBB52CFE3BD30069FAA7 /* libsandbox.tbd */; };
+		3209EBB82CFE3BE50069FAA7 /* libsandbox.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3209EBB52CFE3BD30069FAA7 /* libsandbox.tbd */; };
+		3209EBB92CFE3BEE0069FAA7 /* libsandbox.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3209EBB52CFE3BD30069FAA7 /* libsandbox.tbd */; };
+		3209EBBA2CFE3BF40069FAA7 /* libsandbox.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3209EBB52CFE3BD30069FAA7 /* libsandbox.tbd */; };
 		E41831FF255E8C3B000B1F04 /* process_helper_mac.cc in Sources */ = {isa = PBXBuildFile; fileRef = E41831FD255E8C3B000B1F04 /* process_helper_mac.cc */; };
 		E4183232255E8CB1000B1F04 /* process_helper_mac.cc in Sources */ = {isa = PBXBuildFile; fileRef = E41831FD255E8C3B000B1F04 /* process_helper_mac.cc */; };
 		E4183237255E8CB6000B1F04 /* process_helper_mac.cc in Sources */ = {isa = PBXBuildFile; fileRef = E41831FD255E8C3B000B1F04 /* process_helper_mac.cc */; };
@@ -50,6 +55,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3209EBAF2CFE3BA30069FAA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E418326D255E90B1000B1F04 /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C55303D42D7D46588FB858D9;
+			remoteInfo = cefclient_Helper_alerts;
+		};
+		3209EBB12CFE3BA30069FAA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E418326D255E90B1000B1F04 /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ABF9B9CA6FC04C1BA8E85DAF;
+			remoteInfo = cefsimple_Helper_alerts;
+		};
+		3209EBB32CFE3BA30069FAA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E418326D255E90B1000B1F04 /* cef.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B6F5B9F9348F42A4A0D08B44;
+			remoteInfo = ceftests_Helper_alerts;
+		};
 		E4183283255E90B2000B1F04 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E418326D255E90B1000B1F04 /* cef.xcodeproj */;
@@ -213,6 +239,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3209EBB52CFE3BD30069FAA7 /* libsandbox.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsandbox.tbd; path = usr/lib/libsandbox.tbd; sourceTree = SDKROOT; };
 		E41831FC255E8C3B000B1F04 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E41831FD255E8C3B000B1F04 /* process_helper_mac.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = process_helper_mac.cc; sourceTree = "<group>"; };
 		E418326D255E90B1000B1F04 /* cef.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cef.xcodeproj; path = cef/build/cef.xcodeproj; sourceTree = "<group>"; };
@@ -253,6 +280,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3209EBB62CFE3BD30069FAA7 /* libsandbox.tbd in Frameworks */,
 				E41832C0255E90CF000B1F04 /* libcef_dll_wrapper.a in Frameworks */,
 				E4857170255978A000E02BBF /* QuartzCore.framework in Frameworks */,
 				E485716D2559789800E02BBF /* MetalKit.framework in Frameworks */,
@@ -265,6 +293,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3209EBB72CFE3BDF0069FAA7 /* libsandbox.tbd in Frameworks */,
 				E4183384255EA38D000B1F04 /* CoreFoundation.framework in Frameworks */,
 				E41833C7255EA933000B1F04 /* cef_sandbox.a in Frameworks */,
 				E485709525584A7300E02BBF /* AppKit.framework in Frameworks */,
@@ -277,6 +306,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3209EBB82CFE3BE50069FAA7 /* libsandbox.tbd in Frameworks */,
 				E4183385255EA396000B1F04 /* CoreFoundation.framework in Frameworks */,
 				E41833C8255EA942000B1F04 /* cef_sandbox.a in Frameworks */,
 				E485709725584A8600E02BBF /* AppKit.framework in Frameworks */,
@@ -289,6 +319,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3209EBB92CFE3BEE0069FAA7 /* libsandbox.tbd in Frameworks */,
 				E4183386255EA39C000B1F04 /* CoreFoundation.framework in Frameworks */,
 				E41833C9255EA950000B1F04 /* cef_sandbox.a in Frameworks */,
 				E485709925584A9100E02BBF /* AppKit.framework in Frameworks */,
@@ -301,6 +332,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3209EBBA2CFE3BF40069FAA7 /* libsandbox.tbd in Frameworks */,
 				E4183387255EA3A3000B1F04 /* CoreFoundation.framework in Frameworks */,
 				E41833CA255EA95D000B1F04 /* cef_sandbox.a in Frameworks */,
 				E485709B25584A9B00E02BBF /* AppKit.framework in Frameworks */,
@@ -318,16 +350,19 @@
 				E4183284255E90B2000B1F04 /* libcef_gtest.a */,
 				E4183286255E90B2000B1F04 /* cefclient */,
 				E4183288255E90B2000B1F04 /* cefclient Helper */,
+				3209EBB02CFE3BA30069FAA7 /* cefclient Helper (Alerts) */,
 				E418328A255E90B2000B1F04 /* cefclient Helper (GPU) */,
 				E418328C255E90B2000B1F04 /* cefclient Helper (Plugin) */,
 				E418328E255E90B2000B1F04 /* cefclient Helper (Renderer) */,
 				E4183290255E90B2000B1F04 /* cefsimple */,
 				E4183292255E90B2000B1F04 /* cefsimple Helper */,
+				3209EBB22CFE3BA30069FAA7 /* cefsimple Helper (Alerts) */,
 				E4183294255E90B2000B1F04 /* cefsimple Helper (GPU) */,
 				E4183296255E90B2000B1F04 /* cefsimple Helper (Plugin) */,
 				E4183298255E90B2000B1F04 /* cefsimple Helper (Renderer) */,
 				E461B8AF255EB167005667A3 /* ceftests */,
 				E461B8B1255EB167005667A3 /* ceftests Helper */,
+				3209EBB42CFE3BA30069FAA7 /* ceftests Helper (Alerts) */,
 				E461B8B3255EB167005667A3 /* ceftests Helper (GPU) */,
 				E461B8B5255EB167005667A3 /* ceftests Helper (Plugin) */,
 				E461B8B7255EB167005667A3 /* ceftests Helper (Renderer) */,
@@ -371,6 +406,7 @@
 		E4856BF92556F46B00E02BBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3209EBB52CFE3BD30069FAA7 /* libsandbox.tbd */,
 				E4183370255EA38D000B1F04 /* CoreFoundation.framework */,
 				E418331D255E9F58000B1F04 /* cef_sandbox.a */,
 				E485716F255978A000E02BBF /* QuartzCore.framework */,
@@ -546,6 +582,30 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		3209EBB02CFE3BA30069FAA7 /* cefclient Helper (Alerts) */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = "cefclient Helper (Alerts)";
+			path = "cefclient Helper (Alerts).app";
+			remoteRef = 3209EBAF2CFE3BA30069FAA7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3209EBB22CFE3BA30069FAA7 /* cefsimple Helper (Alerts) */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = "cefsimple Helper (Alerts)";
+			path = "cefsimple Helper (Alerts).app";
+			remoteRef = 3209EBB12CFE3BA30069FAA7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3209EBB42CFE3BA30069FAA7 /* ceftests Helper (Alerts) */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			name = "ceftests Helper (Alerts)";
+			path = "ceftests Helper (Alerts).app";
+			remoteRef = 3209EBB32CFE3BA30069FAA7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		E4183284255E90B2000B1F04 /* libcef_gtest.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -833,7 +893,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -894,7 +954,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
