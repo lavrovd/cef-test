@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #111;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .vertical-scroll {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollUp 15s linear infinite;
+            white-space: nowrap;
+        }
+
+        .horizontal-scroll {
+            position: absolute;
+            top: 50%;
+            animation: scrollLeft 20s linear infinite;
+            white-space: nowrap;
+        }
+
+        .title {
+            margin: 30px 0;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInOut 5s ease-in-out infinite;
+        }
+
+        .title:nth-child(2) { animation-delay: 1s; }
+        .title:nth-child(3) { animation-delay: 2s; }
+        .title:nth-child(4) { animation-delay: 3s; }
+
+        @keyframes scrollUp {
+            from { transform: translate(-50%, 100vh); }
+            to { transform: translate(-50%, -100vh); }
+        }
+
+        @keyframes scrollLeft {
+            from { transform: translate(100vw, -50%); }
+            to { transform: translate(-100vw, -50%); }
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            25% { opacity: 1; }
+            75% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .fancy-title {
+            font-family: "Playfair Display", serif;
+            font-size: 72px;
+            color: #ff6b6b;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .modern-title {
+            font-family: "Roboto", sans-serif;
+            font-size: 48px;
+            color: #4ecdc4;
+            letter-spacing: 5px;
+        }
+
+        .bold-title {
+            font-family: "Impact", sans-serif;
+            font-size: 96px;
+            color: #ffe66d;
+            font-weight: bold;
+        }
+
+        .elegant-title {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 64px;
+            color: #ff8b94;
+            font-style: italic;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Roboto:wght@400;700&family=Cormorant+Garamond:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="vertical-scroll">
+            <div class="title fancy-title">Welcome to Our Show</div>
+            <div class="title modern-title">BREAKING NEWS</div>
+            <div class="title bold-title">SPOTLIGHT</div>
+            <div class="title elegant-title">Coming Soon...</div>
+        </div>
+        
+        <div class="horizontal-scroll">
+            <span class="modern-title">LIVE</span>
+            <i class="fas fa-circle" style="color: red; margin: 0 20px;"></i>
+            <span class="elegant-title">Special Report</span>
+        </div>
+    </div>
+</body>
+</html>
