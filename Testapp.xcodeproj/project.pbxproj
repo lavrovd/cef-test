@@ -12,6 +12,7 @@
 		3209EBB82CFE3BE50069FAA7 /* libsandbox.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3209EBB52CFE3BD30069FAA7 /* libsandbox.tbd */; };
 		3209EBB92CFE3BEE0069FAA7 /* libsandbox.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3209EBB52CFE3BD30069FAA7 /* libsandbox.tbd */; };
 		3209EBBA2CFE3BF40069FAA7 /* libsandbox.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3209EBB52CFE3BD30069FAA7 /* libsandbox.tbd */; };
+		32A96EFF2CFF52E10020796B /* AnimationController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 32A96EFE2CFF52E10020796B /* AnimationController.mm */; };
 		E41831FF255E8C3B000B1F04 /* process_helper_mac.cc in Sources */ = {isa = PBXBuildFile; fileRef = E41831FD255E8C3B000B1F04 /* process_helper_mac.cc */; };
 		E4183232255E8CB1000B1F04 /* process_helper_mac.cc in Sources */ = {isa = PBXBuildFile; fileRef = E41831FD255E8C3B000B1F04 /* process_helper_mac.cc */; };
 		E4183237255E8CB6000B1F04 /* process_helper_mac.cc in Sources */ = {isa = PBXBuildFile; fileRef = E41831FD255E8C3B000B1F04 /* process_helper_mac.cc */; };
@@ -240,6 +241,8 @@
 
 /* Begin PBXFileReference section */
 		3209EBB52CFE3BD30069FAA7 /* libsandbox.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsandbox.tbd; path = usr/lib/libsandbox.tbd; sourceTree = SDKROOT; };
+		32A96EFD2CFF52E10020796B /* AnimationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationController.h; sourceTree = "<group>"; };
+		32A96EFE2CFF52E10020796B /* AnimationController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AnimationController.mm; sourceTree = "<group>"; };
 		E41831FC255E8C3B000B1F04 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E41831FD255E8C3B000B1F04 /* process_helper_mac.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = process_helper_mac.cc; sourceTree = "<group>"; };
 		E418326D255E90B1000B1F04 /* cef.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cef.xcodeproj; path = cef/build/cef.xcodeproj; sourceTree = "<group>"; };
@@ -393,6 +396,8 @@
 				E4856B9925552D6800E02BBF /* Main.storyboard */,
 				E4856B9C25552D6800E02BBF /* Info.plist */,
 				E4856B9D25552D6800E02BBF /* main.mm */,
+				32A96EFD2CFF52E10020796B /* AnimationController.h */,
+				32A96EFE2CFF52E10020796B /* AnimationController.mm */,
 				E4856B9F25552D6800E02BBF /* testapp.entitlements */,
 				E4CBAD48255A810D005220CE /* Shaders.metal */,
 				E4CBAD94255D6ADC005220CE /* Renderer.h */,
@@ -812,6 +817,7 @@
 				E4856B9625552D6800E02BBF /* ViewController.mm in Sources */,
 				E48571352559551100E02BBF /* AppDelegate.m in Sources */,
 				E4CBADA9255D6B40005220CE /* Renderer.mm in Sources */,
+				32A96EFF2CFF52E10020796B /* AnimationController.mm in Sources */,
 				E4856B9E25552D6800E02BBF /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

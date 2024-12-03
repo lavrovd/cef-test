@@ -15,13 +15,34 @@
 #import <mach/mach.h>
 #import "ViewController.h"
 #import "Renderer.h"
+#import "AnimationController.h"
 
-class CefHandler : public CefClient, public CefRenderHandler, public CefLifeSpanHandler {
+class CefHandler : public CefClient,
+                   public CefRenderHandler,
+                   public CefLifeSpanHandler,
+                   public CefLoadHandler {
 public:
     CefRefPtr<CefBrowser> cefBrowser;
     
     CefHandler(Renderer* renderer) {
         this->renderer = renderer;
+    }
+    
+    virtual CefRefPtr<CefLoadHandler> GetLoadHandler() override {
+        return this;
+    }
+    virtual void OnLoadEnd(CefRefPtr<CefBrowser> browser,
+                             CefRefPtr<CefFrame> frame,
+                             int httpStatusCode) override {
+       if (frame->IsMain()) {
+           // Now it's safe to inject the animation controller
+           dispatch_async(dispatch_get_main_queue(), ^{
+               AnimationController* controller = new AnimationController();
+               controller->injectControlScript(browser);
+               controller->setTotalFrames(browser, 100);
+               delete controller;
+           });
+       }
     }
     
     virtual CefRefPtr<CefRenderHandler> GetRenderHandler() override {
@@ -70,6 +91,7 @@ private:
 
 @implementation ViewController {
     CefRefPtr<CefHandler> cefHandler;
+    AnimationController animationController;
 }
 
 typedef enum MouseEventKind : NSUInteger {
@@ -99,7 +121,32 @@ typedef enum MouseEventKind : NSUInteger {
                                   cefBrowserSettings,
                                   nullptr,
                                   nullptr);
+    
+    // After browser creation, you need to wait for the browser to be fully created
+    // This should be done in the CefHandler's OnLoadEnd callback
+    // For now, we'll add a small delay as an example
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self->animationController.injectControlScript(self->cefHandler->cefBrowser);
+        self->animationController.setTotalFrames(self->cefHandler->cefBrowser, 100); // Set to desired frame count
+    });
 }
+
+// Add these new methods for controlling animation:
+- (void)togglePlayPause {
+    static bool isPlaying = true;
+    if (isPlaying) {
+        animationController.pause(cefHandler->cefBrowser);
+    } else {
+        animationController.play(cefHandler->cefBrowser);
+    }
+    isPlaying = !isPlaying;
+}
+
+- (void)seekToFrame:(int)frame {
+    animationController.seekToFrame(cefHandler->cefBrowser, frame);
+}
+
+
 
 - (int)getModifiersForEvent:(NSEvent*)event {
     int modifiers = 0;
