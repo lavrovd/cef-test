@@ -7,13 +7,22 @@
 
 #import "AnimationController.h"
 
-AnimationController::AnimationController() {
-}
+AnimationController::AnimationController() {}
 
 void AnimationController::injectControlScript(CefRefPtr<CefBrowser> browser) {
     if (browser) {
         browser->GetMainFrame()->ExecuteJavaScript(
             controlScript,
+            browser->GetMainFrame()->GetURL(),
+            0);
+    }
+}
+
+void AnimationController::setFrameRate(CefRefPtr<CefBrowser> browser, int fps) {
+    if (browser) {
+        std::string script = "window.__animationController.setFrameRate(" + std::to_string(fps) + ");";
+        browser->GetMainFrame()->ExecuteJavaScript(
+            script,
             browser->GetMainFrame()->GetURL(),
             0);
     }

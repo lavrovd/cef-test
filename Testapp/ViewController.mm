@@ -92,6 +92,10 @@ private:
 @implementation ViewController {
     CefRefPtr<CefHandler> cefHandler;
     AnimationController animationController;
+    bool isPlaying;
+    int currentFrame;
+    int totalFrames;
+    float frameRate;
 }
 
 typedef enum MouseEventKind : NSUInteger {
@@ -103,6 +107,24 @@ typedef enum MouseEventKind : NSUInteger {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Initialize default values
+    isPlaying = false;
+    currentFrame = 0;
+    totalFrames = 100;
+    frameRate = 30.0;
+    
+    [self setupControls];
+    
+    // Get the controls view
+    NSView *controlsView = [self.timelineSlider superview];
+    
+    // Adjust the MTKView frame to account for controls
+    NSRect mtkFrame = self.mtkView.frame;
+    mtkFrame.size.height -= controlsView.frame.size.height;
+    mtkFrame.origin.y = controlsView.frame.size.height;
+    self.mtkView.frame = mtkFrame;
+    
     
     Renderer *renderer = [[Renderer alloc] initWithMetalKitView:self.mtkView];
 
@@ -131,21 +153,135 @@ typedef enum MouseEventKind : NSUInteger {
     });
 }
 
-// Add these new methods for controlling animation:
-- (void)togglePlayPause {
-    static bool isPlaying = true;
-    if (isPlaying) {
-        animationController.pause(cefHandler->cefBrowser);
-    } else {
-        animationController.play(cefHandler->cefBrowser);
+- (void)setupControls {
+    // Create controls view with black background
+    NSView *controlsView = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, self.view.frame.size.width, 50)];
+    controlsView.wantsLayer = YES;
+    controlsView.layer.backgroundColor = NSColor.blackColor.CGColor;
+    [self.view addSubview:controlsView];
+    
+    // Debug frame
+    NSLog(@"Controls view frame: %@", NSStringFromRect(controlsView.frame));
+    
+    // Play/Pause Button
+    NSButton *playButton = [[NSButton alloc] initWithFrame:NSMakeRect(10, 10, 80, 30)];
+    [playButton setButtonType:NSButtonTypePushOnPushOff];  // Fixed enum name
+    [playButton setBezelStyle:NSBezelStyleRounded];
+    [playButton setTitle:@"Play"];
+    [playButton setTarget:self];
+    [playButton setAction:@selector(togglePlayPause:)];
+    [controlsView addSubview:playButton];
+    self.playPauseButton = playButton;
+    
+    // Timeline Slider
+    NSSlider *slider = [[NSSlider alloc] initWithFrame:NSMakeRect(100, 15, 300, 20)];
+    [slider setMinValue:0];
+    [slider setMaxValue:totalFrames];
+    [slider setTarget:self];
+    [slider setAction:@selector(timelineSliderChanged:)];
+    [controlsView addSubview:slider];
+    self.timelineSlider = slider;
+    
+    // Current Frame Label
+    NSTextField *frameLabel = [[NSTextField alloc] initWithFrame:NSMakeRect(410, 15, 60, 20)];
+    frameLabel.stringValue = @"0/100";
+    frameLabel.editable = NO;
+    frameLabel.selectable = NO;
+    frameLabel.bezeled = NO;
+    frameLabel.drawsBackground = NO;
+    frameLabel.textColor = [NSColor whiteColor];
+    [controlsView addSubview:frameLabel];
+    self.currentFrameLabel = frameLabel;
+    
+    // Frame Rate Presets
+    NSPopUpButton *fpsButton = [[NSPopUpButton alloc] initWithFrame:NSMakeRect(480, 15, 100, 20)];
+    [fpsButton addItemsWithTitles:@[@"24 fps", @"25 fps", @"30 fps"]];
+    [fpsButton setTarget:self];
+    [fpsButton setAction:@selector(frameRatePresetChanged:)];
+    [controlsView addSubview:fpsButton];
+    self.frameRatePresets = fpsButton;
+    
+    // Total Frames Input
+    NSTextField *framesField = [[NSTextField alloc] initWithFrame:NSMakeRect(590, 15, 60, 20)];
+    framesField.stringValue = @"100";
+    framesField.editable = YES;
+    framesField.bezeled = YES;
+    framesField.backgroundColor = [NSColor darkGrayColor];
+    framesField.textColor = [NSColor whiteColor];
+    [framesField setTarget:self];
+    [framesField setAction:@selector(totalFramesChanged:)];
+    [controlsView addSubview:framesField];
+    self.totalFramesField = framesField;
+    
+    // Print debug info for all subviews
+    for (NSView *view in controlsView.subviews) {
+        NSLog(@"Subview: %@ Frame: %@", [view class], NSStringFromRect(view.frame));
     }
+}
+// Control event handlers
+- (void)togglePlayPause:(id)sender {
     isPlaying = !isPlaying;
+    [self.playPauseButton setTitle:isPlaying ? @"Pause" : @"Play"];
+    
+    if (isPlaying) {
+        animationController.play(cefHandler->cefBrowser);
+    } else {
+        animationController.pause(cefHandler->cefBrowser);
+    }
 }
 
-- (void)seekToFrame:(int)frame {
+- (void)timelineSliderChanged:(NSSlider *)sender {
+    int frame = [sender intValue];
     animationController.seekToFrame(cefHandler->cefBrowser, frame);
+    [self updateFrameDisplay:frame];
 }
 
+- (void)frameRatePresetChanged:(NSPopUpButton *)sender {
+    int fps = 30;
+    switch ([sender indexOfSelectedItem]) {
+        case 0: fps = 24; break;
+        case 1: fps = 25; break;
+        case 2: fps = 30; break;
+    }
+    frameRate = fps;
+    animationController.setFrameRate(cefHandler->cefBrowser, fps);
+}
+
+- (void)totalFramesChanged:(NSTextField *)sender {
+    totalFrames = [sender intValue];
+    [self.timelineSlider setMaxValue:totalFrames];
+    animationController.setTotalFrames(cefHandler->cefBrowser, totalFrames);
+}
+
+- (void)updateFrameDisplay:(int)frame {
+    [self.currentFrameLabel setStringValue:[NSString stringWithFormat:@"%d/%d", frame, totalFrames]];
+}
+
+- (void)viewDidLayout {
+    [super viewDidLayout];
+    
+    // Update controls view frame
+    NSView *controlsView = [self.timelineSlider superview];
+    if (controlsView) {
+        NSRect frame = controlsView.frame;
+        frame.size.width = self.view.frame.size.width;
+        frame.origin.y = 0;
+        controlsView.frame = frame;
+        
+        // Adjust MTKView frame
+        NSRect mtkFrame = self.mtkView.frame;
+        mtkFrame.size.height = self.view.frame.size.height - frame.size.height;
+        mtkFrame.origin.y = frame.size.height;
+        self.mtkView.frame = mtkFrame;
+    }
+    
+    // Existing CEF resize code
+    CefRefPtr<CefBrowser> browser = cefHandler->cefBrowser;
+    if (!browser || !browser.get()) {
+        return;
+    }
+    browser->GetHost()->WasResized();
+}
 
 
 - (int)getModifiersForEvent:(NSEvent*)event {
@@ -248,13 +384,13 @@ typedef enum MouseEventKind : NSUInteger {
    
 }
 
-- (void)viewDidLayout {
-    CefRefPtr<CefBrowser> browser = cefHandler->cefBrowser;
-    if (!browser || !browser.get()) {
-        return;
-    }
-    browser->GetHost()->WasResized();
-}
+//- (void)viewDidLayout {
+//    CefRefPtr<CefBrowser> browser = cefHandler->cefBrowser;
+//    if (!browser || !browser.get()) {
+//        return;
+//    }
+//    browser->GetHost()->WasResized();
+//}
 
 - (void)mouseDown:(NSEvent *)event {
     [self

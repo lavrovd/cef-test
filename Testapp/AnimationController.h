@@ -18,6 +18,7 @@ public:
     
     void injectControlScript(CefRefPtr<CefBrowser> browser);
     void setTotalFrames(CefRefPtr<CefBrowser> browser, int frames);
+    void setFrameRate(CefRefPtr<CefBrowser> browser, int fps);
     void seekToFrame(CefRefPtr<CefBrowser> browser, int frame);
     void play(CefRefPtr<CefBrowser> browser);
     void pause(CefRefPtr<CefBrowser> browser);
@@ -25,27 +26,62 @@ public:
 private:
     const char* controlScript = R"(
         window.__animationController = {
-            frameRate: 60,
+            frameRate: 30,
             totalFrames: 100,
+            currentFrame: 0,
             isPaused: false,
+            originalDurations: new Map(),
             
             initialize: function() {
                 this.overrideAnimations();
                 document.addEventListener('animationstart', () => this.overrideAnimations());
+                
+                // Add frame update callback
+                requestAnimationFrame(() => this.updateFrame());
+            },
+            
+            updateFrame: function() {
+                if (!this.isPaused) {
+                    const animations = document.getAnimations();
+                    if (animations.length > 0) {
+                        const mainAnim = animations[0];
+                        const progress = mainAnim.currentTime / mainAnim.effect.getTiming().duration;
+                        this.currentFrame = Math.round(progress * this.totalFrames);
+                        
+                        // Dispatch frame update event
+                        window.dispatchEvent(new CustomEvent('frameUpdate', {
+                            detail: {
+                                currentFrame: this.currentFrame,
+                                totalFrames: this.totalFrames,
+                                frameRate: this.frameRate
+                            }
+                        }));
+                    }
+                }
+                requestAnimationFrame(() => this.updateFrame());
             },
             
             overrideAnimations: function() {
                 const animations = document.getAnimations();
                 animations.forEach(animation => {
-                    if (!animation._originalTiming) {
-                        animation._originalTiming = {
+                    if (!this.originalDurations.has(animation)) {
+                        this.originalDurations.set(animation, {
                             duration: animation.effect.getTiming().duration,
                             delay: animation.effect.getTiming().delay
-                        };
+                        });
                         
                         const newDuration = (this.totalFrames * 1000/this.frameRate);
                         animation.effect.updateTiming({ duration: newDuration });
                     }
+                });
+            },
+            
+            setFrameRate: function(fps) {
+                this.frameRate = fps;
+                const newDuration = (this.totalFrames * 1000/fps);
+                
+                document.getAnimations().forEach(animation => {
+                    animation.effect.updateTiming({ duration: newDuration });
                 });
             },
             
@@ -63,6 +99,7 @@ private:
                 document.getAnimations().forEach(animation => {
                     animation.currentTime = timestamp;
                 });
+                this.currentFrame = frame;
             },
             
             play: function() {
