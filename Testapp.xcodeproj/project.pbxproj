@@ -258,7 +258,6 @@
 		E4856B9C25552D6800E02BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4856B9D25552D6800E02BBF /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		E4856B9F25552D6800E02BBF /* testapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = testapp.entitlements; sourceTree = "<group>"; };
-		E4856EA82557047500E02BBF /* libcef_dll_wrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libcef_dll_wrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4856FFC25583BC500E02BBF /* testapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4857066255845CD00E02BBF /* testapp Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "testapp Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4857067255845DD00E02BBF /* testapp Helper (GPU).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "testapp Helper (GPU).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -375,7 +374,6 @@
 			isa = PBXGroup;
 			children = (
 				E41833E6255EA9C4000B1F04 /* README.md */,
-				E418330E255E927A000B1F04 /* Chromium Embedded Framework.framework */,
 				E418326D255E90B1000B1F04 /* cef.xcodeproj */,
 				E4856B9025552D6800E02BBF /* testapp */,
 				E4856F2C2557ECED00E02BBF /* testapp Helper */,
@@ -414,7 +412,7 @@
 				E485716B2559789800E02BBF /* MetalKit.framework */,
 				E485709425584A7300E02BBF /* AppKit.framework */,
 				E485709225584A6E00E02BBF /* Cocoa.framework */,
-				E4856EA82557047500E02BBF /* libcef_dll_wrapper.a */,
+				E418330E255E927A000B1F04 /* Chromium Embedded Framework.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

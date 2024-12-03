@@ -33,6 +33,15 @@ public:
         if (process_type.empty()) {
             
             command_line->AppendSwitch("use-mock-keychain");
+            
+            // Enable GPU acceleration
+            command_line->AppendSwitch("enable-gpu");
+            command_line->AppendSwitch("enable-gpu-compositing");
+            command_line->AppendSwitch("enable-begin-frame-scheduling");
+            
+            // If you're targeting high refresh rates
+            command_line->AppendSwitch("disable-frame-rate-limit");
+            
 //            command_line->AppendSwitch("show-fps-counter");
 //            command_line->AppendSwitch("disable-gpu");
 //            command_line->AppendSwitch("disable-gpu-vsync");

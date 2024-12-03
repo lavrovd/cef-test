@@ -126,8 +126,7 @@ struct ShaderParameters {
     
     // The render pass descriptor references the texture into which Metal should draw
     MTLRenderPassDescriptor *renderPassDescriptor = view.currentRenderPassDescriptor;
-    if (renderPassDescriptor == nil)
-    {
+    if (renderPassDescriptor == nil) {
         NSLog(@"currentRenderPassDescriptor failed");
     }
 
@@ -148,16 +147,13 @@ struct ShaderParameters {
     [commandEncoder endEncoding];
     
     id<CAMetalDrawable> drawable = view.currentDrawable;
-    if (drawable != nil && computePipelineState != nil)
-    {
+    if (drawable != nil && computePipelineState != nil) {
         id<MTLTexture> drawingTexture = [drawable texture];
         
-        if (drawingTexture != nil && texture != nil)
-        {
+        if (drawingTexture != nil && texture != nil) {
            
             id<MTLComputeCommandEncoder> encoder = [commandBuffer computeCommandEncoder];
-            if (encoder != nil)
-            {
+            if (encoder != nil) {
                 ShaderParameters params;
                
                 
@@ -211,7 +207,7 @@ struct ShaderParameters {
         double smoothing = 0.9;
         
         fps = fps * smoothing + (1000 / frameTimeMs) * (1.0 - smoothing);
-       // NSLog(@"fps: %f, frametime: %f", fps, frameTimeMs);
+        //NSLog(@"fps: %f, frametime: %f", fps, frameTimeMs);
       
     }
     
