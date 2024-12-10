@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Glowing Words</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            background-color: #666;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            width: 800px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .word {
+            color: black;
+            margin: 0 4px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes glowAnimation {
+            0%, 100% { 
+                color: black;
+                text-shadow: none;
+            }
+            50% { 
+                color: #ff6600;
+                text-shadow: 0 0 10px #ff6600, 0 0 20px #ff6600;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="wordContainer"></div>
+
+    <script>
+        const words = [
+            'time', 'person', 'year', 'way', 'day', 'thing', 'man', 'world', 'life', 'hand',
+            'part', 'child', 'eye', 'woman', 'place', 'work', 'week', 'case', 'point', 'group',
+            'number', 'problem', 'fact', 'idea', 'water', 'money', 'month', 'book', 'story', 'example',
+            'family', 'history', 'question', 'power', 'change', 'research', 'moment', 'reason', 'love', 'education',
+            'music', 'data', 'theory', 'law', 'bird', 'paper', 'space', 'tree', 'nature', 'science'
+        ];
+
+        const container = document.getElementById('wordContainer');
+        
+        // Create 200 word spans
+        for (let i = 0; i < 200; i++) {
+            const word = document.createElement('span');
+            word.className = 'word';
+            word.textContent = words[Math.floor(Math.random() * words.length)];
+            container.appendChild(word);
+        }
+
+        function animateRandomWord() {
+            const allWords = document.getElementsByClassName('word');
+            const randomWord = allWords[Math.floor(Math.random() * allWords.length)];
+            
+            randomWord.style.animation = 'glowAnimation 1.5s ease';
+            
+            setTimeout(() => {
+                randomWord.style.animation = 'none';
+            }, 1500);
+        }
+
+        // Start random animations
+        setInterval(animateRandomWord, 100);
+    </script>
+</body>
+</html>
